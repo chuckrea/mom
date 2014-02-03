@@ -1,4 +1,4 @@
-class Weather 
+class Forecast 
 	attr_accessor :location, :latitude, :longitude
 
 	def self.forecast(location)
