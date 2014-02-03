@@ -24,6 +24,7 @@ end
 gem 'jquery-rails'
 
 gem 'twilio-ruby'
+gem 'pry'
 
 gem 'geocoder'
 
