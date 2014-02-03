@@ -13,6 +13,14 @@
 
 ActiveRecord::Schema.define(:version => 20140203195639) do
 
+  create_table "custom_texts", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "to_phone_number"
+    t.text     "body"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
+
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "",   :null => false
     t.string   "encrypted_password",     :default => "",   :null => false
