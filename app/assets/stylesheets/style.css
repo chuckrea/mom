@@ -1,0 +1,93 @@
+body {
+
+}
+
+.photo1 {
+  background-image:url('50smom1.jpg');
+  background-size: cover;
+  /*background-position:*/
+
+}
+.photo2 {
+  background-image:url('50smomcleaning.png');
+  background-size: cover;
+/*  background-position: 50 150;*/
+
+}
+.photo3 {
+  background-image:url('50smomcleantable.jpg');
+  background-size: cover;
+  /*background-position:*/
+}
+
+.photo4 {
+  background-image:url('mom4.jpg');
+  background-size: cover;
+  /*background-position:*/
+}
+.photo5 {
+  background-image:url('mom5.jpeg');
+  background-size: cover;
+  /*background-position:*/
+}
+.photo6 {
+  background-image:url('mom6.jpg');
+  background-size: cover;
+  /*background-position:*/
+}
+.photo7 {
+  background-image:url('mom7.jpg');
+  background-size: cover;
+  /*background-position:*/
+}
+.photo8 {
+  background-image:url('mom8.jpeg');
+  background-size: cover;
+  /*background-position:*/
+}
+
+.thin-test {
+	height: 100px;
+}
+
+ul li {
+  list-style: none;
+  overflow: hidden;
+  height: 550px;
+  position:relative;
+}
+
+ul li .text-weather, .text-food, .text-transportation {
+  position: absolute;
+  top: 50px;
+  left: 75px;
+  color: gray;
+  text-shadow: 2px 2px 4px black;
+  /*color: #000000;*/
+  background: rgba(255,255,255,0.8);
+  font-family: 'Pacifico', cursive;
+	
+}
+
+
+ul li .text-mom {
+  position: absolute;
+  margin: 0 auto;
+  top: 50px;
+  left: 200px;
+  color: gray;
+  text-shadow: 2px 2px 4px black;
+  /*color: #000000;*/
+  /*background: rgba(255,255,255,0.8);*/
+  font-size: 60px; 
+  padding-bottom: 40px;
+  text-align: center;
+  font-family: 'Dancing Script', cursive;
+}
+
+
+
+
+.parallax-background {
+  height: 900px;
+}
