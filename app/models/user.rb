@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
   attr_accessible :latitude, :longitude
   # attr_accessible :title, :body
 
-	geocoded_by :location  # can also be an IP address
-	after_validation :geocode
+  geocoded_by :location  
+  after_validation :geocode
 
 end

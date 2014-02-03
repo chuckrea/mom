@@ -5,5 +5,5 @@ Mom::Application.routes.draw do
   post 'welcome', to: "welcome#create"
 
   devise_for :users
-
+  
 end
