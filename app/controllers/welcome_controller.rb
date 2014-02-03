@@ -19,7 +19,7 @@ class WelcomeController < ApplicationController
     @client.account.messages.create(
       :from => '+16463623947',
       :to => params[:phone],
-      :body => 'Hey there!'
+      :body => "It's Mom!  You can call me, you know!"
     )
 
     redirect_to '/'
