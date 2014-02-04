@@ -1,27 +1,4 @@
 $(function() {
-	//*************
-	//CUSTOM TEXT EVENT HANDLING
-	//*************
-
-	$('#send-text').click(function(){
-		console.log("button was clicked");
-		var number = $('#phone-num').val();
-
-		$.ajax({
-			url: '/welcome',
-			type: 'post',
-			dataType: 'json',
-			data: {phone_num: number}
-		})
-			.success(function(data) {
-				console.log("text was sent!")
-			});
-			$('#phone-num').val("");
-	});
-
-	$("#register-btn").click(function(){
-  	$(".register").toggle();
-	});
 	
 	//**************
 	// PARALLAX
@@ -70,6 +47,30 @@ $(function() {
 	$('.pull-me').click(function(){
     $('.panel').slideToggle('slow');
     });
+
+	//*************
+	//CUSTOM TEXT EVENT HANDLING
+	//*************
+
+	$('#send-text').click(function(){
+		console.log("button was clicked");
+		var number = $('#phone-num').val();
+
+		$.ajax({
+			url: '/welcome',
+			type: 'post',
+			dataType: 'json',
+			data: {phone_num: number}
+		})
+			.success(function(data) {
+				console.log("text was sent!")
+			});
+			$('#phone-num').val("");
+	});
+
+	$("#register-btn").click(function(){
+  	$(".register").toggle();
+	});
 
 });
 

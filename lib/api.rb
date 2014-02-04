@@ -1,5 +1,19 @@
 module Api
 
+  def get_farmersmarkets(user)
+
+    # ZIP - data info
+      url = "https://data.ny.gov/resource/farmersmarkets.json?zip=#{user.zip_code}"
+      response = HTTParty.get(url)
+      farmersmarkets = JSON(response.body)
+
+      farmersmarkets.each do |market|
+        mkt = FarmersMarket.create(location: market["location"], market_name: market["market_name"], operation_hours: market["operation_hours"])
+        user.farmers_markets << mkt
+      end
+
+  end
+
   def get_restaurants(user)
 
     Yelp.configure(:yws_id          => '55vsTZcAU8kH_LEQj_oIjA',
@@ -45,7 +59,7 @@ module Api
 
     case  
       when temperature < 0 
-        return "Your weather forecast for today is #{temperature} degrees and #{summary}. That's freezing! Stay where you are, I'm on my way with soup."
+        return "Your weather forecast for today is #{temperature} degrees and #{summary}. It's freezing outside! I'm coming over."
       when temperature < 25 &&  temperature > 0 
         return "Your weather forecast for today is #{temperature} degrees and #{summary}. Don't even think about leaving home without a scarf."
       when temperature < 50 && temperature > 25

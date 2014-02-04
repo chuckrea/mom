@@ -1,5 +1,6 @@
 require 'open-uri'
 require 'sanitize'
+require 'nokogiri'
 
 # # namespace :mta do
 
