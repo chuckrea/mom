@@ -10,6 +10,8 @@ class User < ActiveRecord::Base
   attr_accessible :latitude, :longitude
   # attr_accessible :title, :body
 
+  has_many :yelp_infos
+
   geocoded_by :location  
   after_validation :geocode
 

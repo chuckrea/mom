@@ -1,5 +1,40 @@
 module Api
 
+  def get_restaurants(user)
+
+    Yelp.configure(:yws_id          => '55vsTZcAU8kH_LEQj_oIjA',
+              :consumer_key    => 'I7sXrBiqGJXGNmZGMeOiJQ',
+              :consumer_secret => 'JdMoZU8iGn6iQlvuP2Mk5-EsPt8',
+              :token          => '-_031yEPjKzFSJuzTovFdp0M5RufpYC1',
+              :token_secret    => 'USpbVVJmAEWq_m4mykUJbcK4kNc')
+
+
+    client = Yelp::Client.new
+
+    include Yelp::V2::Search::Request
+
+    request = GeoPoint.new(
+       :term => "restaurant",  
+       :latitude => user.latitude,  
+       :longitude => user.longitude,  
+       :limit => 15,  
+       :sort => 1)  
+
+    response = client.search(request)
+
+    response["businesses"].each do |biz|
+      yelp = YelpInfo.create(restaurant_name: biz["name"], cuisine_type: biz["categories"][0][0], address: biz["location"]["display_address"])
+      user.yelp_infos << yelp
+    end
+    # # Name
+    # name = response["businesses"][0]["name"]
+    # # Address
+    # address = response["businesses"][0]["location"]["display_address"]
+    # # Category
+    # category = response['businesses'][0]["categories"][1][0]
+
+  end
+
   def get_forecast(user)
     latitude = user.latitude
     longitude = user.longitude
