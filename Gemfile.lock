@@ -68,6 +68,7 @@ GEM
     mime-types (1.25.1)
     multi_json (1.8.4)
     multi_xml (0.5.5)
+    oauth (0.4.7)
     orm_adapter (0.5.0)
     pg (0.17.1)
     polyglot (0.3.3)
@@ -128,6 +129,9 @@ GEM
       json (>= 1.8.0)
     warden (1.2.3)
       rack (>= 1.0)
+    yelpster (1.2.0)
+      json (>= 1.1.1)
+      oauth (>= 0.4.5)
 
 PLATFORMS
   ruby
@@ -144,3 +148,4 @@ DEPENDENCIES
   sass-rails (~> 3.2.3)
   twilio-ruby
   uglifier (>= 1.0.3)
+  yelpster

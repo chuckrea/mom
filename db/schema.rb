@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140203195639) do
+ActiveRecord::Schema.define(:version => 20140203232643) do
 
   create_table "custom_texts", :force => true do |t|
     t.integer  "user_id"
@@ -45,5 +45,14 @@ ActiveRecord::Schema.define(:version => 20140203195639) do
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
+
+  create_table "yelp_infos", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "restaurant_name"
+    t.string   "cuisine_type"
+    t.string   "address"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
 
 end
