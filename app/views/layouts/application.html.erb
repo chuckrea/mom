@@ -11,14 +11,9 @@
 
 </head>
 <body>
-<nav>
+	<div class="panel">
 
-  <% if current_user %>
-    Welcome, <%= current_user.email%> | <%= link_to "Logout", destroy_user_session_path, :method => :delete %></a> | <a href="/">Home</a>
-  <% else %>
-    <%= link_to "Register", new_user_registration_path%> | <%= link_to "Sign-In", new_user_session_path%> | <a href="/">Home</a>
-    <% end %>
-</nav>
+	</div><p class="slide"><div class="pull-me">Slide Up/Down</div></p>
 <%= yield %>
 
 </body>
