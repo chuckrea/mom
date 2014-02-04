@@ -10,15 +10,15 @@ module Api
 
     case  
       when temperature < 0 
-        "Your weather forecast for today is #{temperature} degrees and #{summary}. That's freezing! Stay where you are, I'm on my way with soup."
+        return "Your weather forecast for today is #{temperature} degrees and #{summary}. That's freezing! Stay where you are, I'm on my way with soup."
       when temperature < 25 &&  temperature > 0 
-        "Your weather forecast for today is #{temperature} degrees and #{summary}. Don't even think about leaving home without a scarf."
+        return "Your weather forecast for today is #{temperature} degrees and #{summary}. Don't even think about leaving home without a scarf."
       when temperature < 50 && temperature > 25
-        "Your weather forecast for today is #{temperature} degrees and #{summary}. That's pretty chilly. Better not forget your coat!"
+        return "Your weather forecast for today is #{temperature} degrees and #{summary}. That's pretty chilly. Better not forget your coat!"
       when temperature < 70 && temperature > 50 
-        "Your weather forecast for today is #{temperature} degrees and #{summary}. Do your mother a favor, grab a sweater."
+        return "Your weather forecast for today is #{temperature} degrees and #{summary}. Do your mother a favor, grab a sweater."
       when temperature > 70 
-        "Your weather forecast for today is #{temperature} degrees and #{summary}. Who's hungry?"
+        return "Your weather forecast for today is #{temperature} degrees and #{summary}. Who's hungry?"
       end
   end
 
@@ -36,7 +36,7 @@ module Api
       @client.account.messages.create(
         :from => '+16463623890',
         :to => user.phone_number,
-        :body => "It's Mom!  I know you don't check the weather, so here you go: " + forecast
+        :body => forecast
       )
     end
   end

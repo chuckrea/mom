@@ -16,11 +16,11 @@
   <% if current_user %>
     Welcome, <%= current_user.email%> <%= link_to "Logout", destroy_user_session_path, :method => :delete %><%= button_to "Home", root_path %>
   <% else %>
-    <%= button_to "Register", new_user_registration_path%> <%= button_to "Sign-In", new_user_session_path%> <%= button_to "Home", root_path %>
+    <%= button_to "Register", new_user_registration_path , :method => :get %> <%= button_to "Sign-In", new_user_session_path, :method => :get %>
     <% end %>
 </nav>
 	</div><p class="slide"><div class="pull-me">Slide Up/Down</div></p>
-  
+
 <%= yield %>
 
 </body>
