@@ -1,5 +1,27 @@
 $(function() {
+	//*************
+	//CUSTOM TEXT EVENT HANDLING
+	//*************
+
+	$('#send-text').click(function(){
+		console.log("button was clicked");
+		var number = $('#phone-num').val();
+
+		$.ajax({
+			url: '/welcome',
+			type: 'post',
+			dataType: 'json',
+			data: {phone_num: number}
+		})
+			.success(function(data) {
+				console.log("text was sent!")
+			});
+			$('#phone-num').val("");
+	});
 	
+	//**************
+	// PARALLAX
+	//**************
 	var parallax = (function() {
 		'use strict';
 
@@ -25,7 +47,6 @@ $(function() {
 			for (i = 0; i < len; i++) {
 
 				$div = $divs.eq(i);
-				console.log(i);
 
 				offset = $div.offset().top;
 
@@ -38,4 +59,13 @@ $(function() {
 	})();
 
 	$(window).on('scroll', parallax);
+
+	//*************
+	//SLIDE-DOWN LOGIN & SIGNUP
+	//*************
+	$('.pull-me').click(function(){
+    $('.panel').slideToggle('slow');
+    });
+
 });
+

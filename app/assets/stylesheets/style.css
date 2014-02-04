@@ -2,6 +2,17 @@ body {
 
 }
 
+.button_to {
+  display: inline-block;
+  margin-top: 7px;
+}
+
+nav {
+  height: 50px;
+  background-color: slategray;
+ 
+}
+
 .photo1 {
   background-image:url('50smom1.jpg');
   background-size: cover;
@@ -60,13 +71,19 @@ ul li {
 ul li .text-weather, .text-food, .text-transportation {
   position: absolute;
   top: 50px;
-  left: 75px;
+  right: 75px;
   color: gray;
   text-shadow: 2px 2px 4px black;
   /*color: #000000;*/
   background: rgba(255,255,255,0.0);
   font-family: 'Pacifico', cursive;
 	
+}
+
+ul li .text-food {
+  position: absolute;
+  top: 50px;
+  left: 75px;
 }
 
 .text-weather h1, .text-food h1, .text-transportation h1 {
@@ -87,7 +104,7 @@ ul li .text-mom {
   padding-bottom: 40px;
 }
 
-.text-mom h1, .text-mom h2 {
+.text-mom h1, .text-mom h2, .text-mom h3 {
   color: white;
   font-family: 'Pacifico', cursive;
 }
