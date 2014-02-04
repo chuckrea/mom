@@ -2,6 +2,17 @@ body {
 
 }
 
+.button_to {
+  display: inline-block;
+  margin-top: 7px;
+}
+
+nav {
+  height: 50px;
+  background-color: slategray;
+ 
+}
+
 .photo1 {
   background-image:url('50smom1.jpg');
   background-size: cover;
@@ -38,7 +49,7 @@ body {
 .photo7 {
   background-image:url('mom7.jpg');
   background-size: cover;
-  /*background-position:*/
+  background-position: 100px -200px;
 }
 .photo8 {
   background-image:url('mom8.jpeg');
@@ -60,13 +71,23 @@ ul li {
 ul li .text-weather, .text-food, .text-transportation {
   position: absolute;
   top: 50px;
-  left: 75px;
+  right: 75px;
   color: gray;
   text-shadow: 2px 2px 4px black;
   /*color: #000000;*/
-  background: rgba(255,255,255,0.8);
+  background: rgba(255,255,255,0.0);
   font-family: 'Pacifico', cursive;
 	
+}
+
+ul li .text-food {
+  position: absolute;
+  top: 50px;
+  left: 75px;
+}
+
+.text-weather h1, .text-food h1, .text-transportation h1 {
+  font-family: 'Pacifico', cursive;
 }
 
 
@@ -74,18 +95,19 @@ ul li .text-mom {
   position: absolute;
   margin: 0 auto;
   top: 50px;
-  left: 200px;
-  color: gray;
+  left: 50px;
+  color: white;
   text-shadow: 2px 2px 4px black;
   /*color: #000000;*/
   background: rgba(255,255,255,0.8);
   font-size: 60px; 
   padding-bottom: 40px;
-  text-align: center;
-  font-family: 'Dancing Script', cursive;
 }
 
-
+.text-mom h1, .text-mom h2, .text-mom h3 {
+  color: white;
+  font-family: 'Pacifico', cursive;
+}
 
 
 .parallax-background {

@@ -1,7 +1,7 @@
+require "api.rb"
+
 class WelcomeController < ApplicationController
-
-# put your own credentials here
-
+  include Api
 
   def index
 
@@ -9,24 +9,22 @@ class WelcomeController < ApplicationController
 
   def create
 
+    account_sid = 'AC2e3cd4670d5a455fb0e6da2e5ddd5eeb'
+    auth_token = 'b40b07ba1a2d3d92bb5e9e2c77330c3b'
 
-    account_sid = 'ACfb7ac7ffa3b4d03c419ae4d98c32afd6'
-    auth_token = '63c3b515f991dd71c83cf9bf47031bca'
-
-    # set up a client to talk to the Twilio REST API
-    @client = Twilio::REST::Client.new account_sid, auth_token
-
-    users = User.all
-    users.each do |user|
-      @client.account.messages.create(
-        :from => '+16463623947',
-        :to => user.phone_number,
-        :body => "It's Mom!  You can call me, you know!"
-      )
+    respond_to do |format|
+      format.html
+      format.json do
+      # set up a client to talk to the Twilio REST API
+      client = Twilio::REST::Client.new account_sid, auth_token
+      client.account.messages.create(
+          :from => '+16463623890',
+          :to => params[:phone_num],
+          :body => "It's Mom!"
+        )
+      end
     end
-
-    redirect_to '/'
-
+    redirect_to root_path
   end
 
 

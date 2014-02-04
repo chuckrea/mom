@@ -27,7 +27,7 @@ gem 'twilio-ruby'
 gem 'pry'
 
 gem 'geocoder'
-
+gem 'yelpster'
 gem 'httparty'
 
 # To use ActiveModel has_secure_password
