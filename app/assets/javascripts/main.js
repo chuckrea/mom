@@ -18,6 +18,10 @@ $(function() {
 			});
 			$('#phone-num').val("");
 	});
+
+	$("#register-btn").click(function(){
+  	$(".register").toggle();
+	});
 	
 	//**************
 	// PARALLAX

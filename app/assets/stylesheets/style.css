@@ -99,7 +99,7 @@ ul li .text-mom {
   color: white;
   text-shadow: 2px 2px 4px black;
   /*color: #000000;*/
-  background: rgba(255,255,255,0.8);
+  background: rgba(255,255,255,0);
   font-size: 60px; 
   padding-bottom: 40px;
 }
