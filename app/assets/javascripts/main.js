@@ -38,4 +38,10 @@ $(function() {
 	})();
 
 	$(window).on('scroll', parallax);
+
+	$('.pull-me').click(function(){
+    $('.panel').slideToggle('slow');
+    });
+
 });
+
