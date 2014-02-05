@@ -1,4 +1,49 @@
 module Api
+require 'open-uri'
+require 'sanitize'
+require 'nokogiri'
+
+        #Opens and Cleans XML
+        filestring = ""
+        f = open('http://www.mta.info/status/serviceStatus.txt')
+        f.each {|line| filestring += line }
+        filestring.gsub!(/&lt;/, "<").gsub!(/&gt;/, ">").gsub!(/&amp;nbsp;/, " ").gsub!(/&amp;/, "")
+
+        #Parse XML
+        doc = Nokogiri::HTML(filestring)
+
+        #Returns last update time
+        time = doc.xpath('//service//timestamp')
+        last_update = Sanitize.clean!("#{time}")
+
+        #RETURNS LINES ARRAY
+        @lines =[] 
+        names = doc.xpath('//subway//name').map {|name| name}
+        names.each do |name|
+        clean_name = Sanitize.clean!("#{name}")
+        @lines << clean_name
+        end
+
+        #RETURNS STATUS ARRAY
+        line_status = []
+        @status = doc.xpath('//subway//name').map {|name| name.next_sibling.text}
+        @status.each do |status|
+        line_status << status
+        end
+
+        #RETURNS DESCRIPTION ARRAY
+        status_description = doc.xpath('//subway//name').map {|name| name.next_sibling.next_sibling.text.split("\n").drop(2)}
+
+        description =[]
+        status_description.each do |status|
+        description << status.join.split.join(" ")
+        end
+
+        puts @lines
+        puts "***********************************"
+
+        puts @status
+        puts "***********************************"
 
   def get_farmersmarkets(user)
 
@@ -70,6 +115,12 @@ module Api
       end
   end
 
+  def get_mta(user)
+    @mta_status = @status[@lines.index(user.line)]
+    puts @status
+    puts @lines
+  end 
+
   def send_weather_texts
 
     account_sid = 'AC2e3cd4670d5a455fb0e6da2e5ddd5eeb'
@@ -89,4 +140,20 @@ module Api
     end
   end
 
+  def send_mta_text
+    account_sid = 'AC2e3cd4670d5a455fb0e6da2e5ddd5eeb'
+    auth_token = 'b40b07ba1a2d3d92bb5e9e2c77330c3b'
+    
+    @client = Twilio::REST::Client.new account_sid, auth_token
+
+    users = User.all
+    users.each do |user|
+      line_status = get_mta(user)
+      @client.account.messages.create(
+        :from => '+16463623890',
+        :to => user.phone_number,
+        :body => line_status 
+      )
+    end
+  end
 end

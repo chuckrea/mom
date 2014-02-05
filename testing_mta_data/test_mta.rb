@@ -61,6 +61,12 @@ require 'nokogiri'
         puts status
         puts "***********************************"
 
+        lines.each do |line|
+            puts line
+            puts status[lines.index(line)]
+        end
+
+
         #lines.each_with_index do |thing, index|
             #Line.create(name: lines[index], status: status[index], description: description[index])
         #end
