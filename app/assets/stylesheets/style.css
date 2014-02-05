@@ -5,6 +5,27 @@ body {
   font-size: 18px;
   background-color: #222222;
 }
+
+
+.inactive {
+  visibility: hidden;
+  display: none;
+}
+
+label {
+  color: white;
+  display: inline;
+}
+
+.session {
+  color: white;
+}
+
+.panels {
+  margin: 30px 0 0 15px;
+}
+
+
 .container {
   top: 15px;
 }
