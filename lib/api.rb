@@ -56,9 +56,9 @@ module Api
 
     case  
       when temperature < 0 
-        return "It's #{temperature} degrees outside and #{summary}. It's freezing outside! Stay home. I'm coming over and we'll watch Jeopardy."
+        return "It's #{temperature} degrees outside and #{summary}. It's freezing outside! Stay home. I'm coming over."
       when temperature < 25 && temperature > 0 
-        return "It's #{temperature} degrees outside and #{summary}. If you have to go to that job of yours, you'd better wear that beautiful scarf that I made you that I know you don't like."
+        return "It's #{temperature} degrees outside and #{summary}. You'd better wear that beautiful scarf that I made you that I know you don't like."
       when temperature < 50 && temperature > 25
         return "It's #{temperature} degrees outside and #{summary}. That's pretty chilly, honey. Better not forget your coat or that I'll always love you even though I never hear from you."
       when temperature < 70 && temperature > 50 
