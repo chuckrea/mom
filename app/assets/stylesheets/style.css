@@ -5,7 +5,9 @@ body {
   font-size: 18px;
   background-color: #222222;
 }
-
+.container {
+  top: 15px;
+}
 nav {
   padding-right: 15px;
   text-align: right;
@@ -40,7 +42,7 @@ h3.tagline {
   -webkit-margin-before: 0em; 
   letter-spacing: 3px;
   word-spacing: 4.5px;
-  padding-top: 18px;
+  padding-top: 40px;
 }
 
 h3 {
@@ -49,13 +51,13 @@ h3 {
 }
 
 .circle-photo-one {
-    background-image: url('mom7.jpg');
+  background-image: url('mom7.jpg');
   height: 335px;
   width: 335px;
   border-radius: 100%;
   display: inline-block;
   float: right;
-  margin-top: -260px;
+  margin-top: -180px;
   margin-right: 71px;
 }
 
@@ -97,11 +99,18 @@ li {
   top: -50px;
 }
 
+.parallax {
+  position: relative;
+  top: 15px;
+}
+
 .parallax-background {
   height: 425px;
   background-size: cover;
 }
-
+.banner {
+  top: 0px;
+}
 .first {
   background-color: lightblue;
 }
@@ -203,3 +212,17 @@ margin-bottom: 55px;
   display: inline-block;
   padding-left: 75px;
 }
+
+#logged_in_menu {
+  display: inline-block;
+}
+
+#logged_out_menu {
+  display: inline-block;
+}
+
+
+
+
+
+
