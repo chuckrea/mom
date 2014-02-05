@@ -72,6 +72,10 @@ $(function() {
   	$(".register").toggle();
 	});
 
+	$("#sign-in-btn").click(function(){
+  	$(".sign-in").toggle();
+	});
+
 });
 
 // $(function() {

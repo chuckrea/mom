@@ -48,8 +48,9 @@ $(function() {
   mom_app = {
     // actions
     signIn: function(data){
-      $(close_sign_in_model).trigger('click');
+      $(".sign-in").toggle();
       mom_app.loggedIn(data);
+      location.reload();
     },
 
     signUp: function(data){
@@ -62,6 +63,7 @@ $(function() {
 
     logOut: function(data){
       mom_app.loggedOut();
+      location.reload();
     },
 
     // toggle logged in/logged out states
