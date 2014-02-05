@@ -5,6 +5,12 @@ body {
   font-size: 18px;
   background-color: #222222;
 }
+
+.inactive {
+  visibility: hidden;
+  display: none;
+}
+
 .container {
   top: 15px;
 }
