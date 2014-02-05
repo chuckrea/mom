@@ -74,3 +74,20 @@ $(function() {
 
 });
 
+// $(function() {
+// 	// activate sign up modal from
+//   $sign_up_form = $("form#sign_up_user");
+// 	$sign_up_form.on("submit", function(event){
+// 	  $.ajax({	url: '/users',
+//    						method: "post",
+// 	  					format: "json",
+// 	  					data: $sign_up_form.serialize()
+// 	  				}
+// 	  ).done(function(data) {
+// 	  	console.log(data);
+// 	  	if (data.success){
+// 	  		game_app.signUp(data)
+// 	  	}
+// 	  });
+// 	});
+
