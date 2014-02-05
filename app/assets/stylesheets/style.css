@@ -1,48 +1,69 @@
 body {
-
+  font-size: 18px;
 }
 
 .photo1 {
-  background-image:url('50smom1.jpg');
-  background-size: cover;
-  /*background-position:*/
-
+  background-color: #040404;
 }
+
+.circle-photo {
+  background-image: url('mom7.jpg'); 
+  height: 220px;
+  width: 220px;
+  border-radius: 100%;
+  display: inline-block;
+}
+
+.circle-photo-two {
+  background-image: url('mom7.jpg'); 
+  height: 220px;
+  width: 220px;
+  border-radius: 100%;
+  display: inline-block;
+}
+
+.word-wrap {
+  display: inline-block;
+  padding-right: 250px;
+}
+
+
 .photo2 {
-  background-image:url('50smomcleaning.png');
-  background-size: cover;
+/*  background-image:url('50smomcleaning.png');
+  background-size: cover;*/
 /*  background-position: 50 150;*/
 
 }
-.photo3 {
-  background-image:url('50smomcleantable.jpg');
-  background-size: cover;
+.last-photo {
+/*  background-image:url('50smomcleantable.jpg');
+  background-size: cover;*/
   /*background-position:*/
+    background-color: #040404;
 }
 
 .photo4 {
-  background-image:url('mom4.jpg');
-  background-size: cover;
+/*  background-image:url('mom4.jpg');
+  background-size: cover;*/
   /*background-position:*/
 }
 .photo5 {
-  background-image:url('mom5.jpeg');
-  background-size: cover;
+/*  background-image:url('mom5.jpeg');
+  background-size: cover;*/
   /*background-position:*/
 }
 .photo6 {
-  background-image:url('mom6.jpg');
-  background-size: cover;
+/*  background-image:url('mom6.jpg');
+  background-size: cover;*/
   /*background-position:*/
 }
 .photo7 {
-  background-image:url('mom7.jpg');
+/*  background-image:url('mom7.jpg');
   background-size: cover;
-  background-position: 100px -200px;
+  background-position: 100px -200px;*/
 }
 .photo8 {
-  background-image:url('mom8.jpeg');
-  background-size: cover;
+/*  background-image:url('mom8.jpeg');
+  background-size: cover;*/
   /*background-position:*/
 }
 
@@ -87,12 +108,22 @@ ul li .text-mom {
   padding-bottom: 40px;
 }
 
-.text-mom h1, .text-mom h2 {
-  color: white;
+.text-mom h1 {
+  color: #FFFAFA;
   font-family: 'Pacifico', cursive;
+  font-size: 1em; 
 }
 
+.text-mom h2 {
+  color: #FFFAFA;
+  font-family: 'Arial';
+  font-size: .5em;
+  padding-left: 15px;
+}
 
 .parallax-background {
   height: 900px;
 }
+
+
+
