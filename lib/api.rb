@@ -11,7 +11,6 @@ module Api
         mkt = FarmersMarket.create(location: market["location"], market_name: market["market_name"], operation_hours: market["operation_hours"])
         user.farmers_markets << mkt
       end
-
   end
 
   def get_restaurants(user)
