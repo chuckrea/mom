@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140204230252) do
+ActiveRecord::Schema.define(:version => 20140205214504) do
 
   create_table "custom_texts", :force => true do |t|
     t.integer  "user_id"
@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(:version => 20140204230252) do
     t.float    "latitude"
     t.float    "longitude"
     t.string   "zip_code"
+    t.string   "line"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
