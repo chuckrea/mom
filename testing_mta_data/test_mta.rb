@@ -1,5 +1,6 @@
 require 'open-uri'
 require 'sanitize'
+require 'nokogiri'
 
 # # namespace :mta do
 
@@ -14,9 +15,9 @@ require 'sanitize'
 #     end
 
 
-    task :fetch => :environment do
+    # task :fetch => :environment do
 
-        Line.destroy_all
+        # Line.destroy_all
         
         #Opens and Cleans XML
         filestring = ""
@@ -54,10 +55,16 @@ require 'sanitize'
         description << status.join.split.join(" ")
         end
 
-        lines.each_with_index do |thing, index|
-            Line.create(name: lines[index], status: status[index], description: description[index])
-        end
+        puts lines
+        puts "***********************************"
 
-    end
+        puts status
+        puts "***********************************"
+
+        #lines.each_with_index do |thing, index|
+            #Line.create(name: lines[index], status: status[index], description: description[index])
+        #end
+
+    # end
 
 # end

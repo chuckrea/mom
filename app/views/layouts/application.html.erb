@@ -11,9 +11,20 @@
 
 </head>
 <body>
-	<div class="panel">
+  <nav>
+  <div id="login-wrap">
+    <div id="logged_in_menu" class="inactive">
+      <button id="logout_link">Logout</button>
+    </div>
+    <div id="logged_out_menu" class="inactive">
+      <button id="register-btn">Register</button>
+      <button id="sign-in-btn">Sign In</button>
+    </div>
+  </div>
+</nav>
+<div class="register" style="display: none"><%= render partial: "layouts/sign_up" %></div>
+<div class="sign-in" style="display: none"><%= render partial: "layouts/sign_in" %></div>
 
-	</div><p class="slide"><div class="pull-me">Slide Up/Down</div></p>
 <%= yield %>
 
 </body>

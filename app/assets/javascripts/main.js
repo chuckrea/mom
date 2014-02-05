@@ -1,5 +1,8 @@
 $(function() {
 	
+	//**************
+	// PARALLAX
+	//**************
 	var parallax = (function() {
 		'use strict';
 
@@ -25,7 +28,6 @@ $(function() {
 			for (i = 0; i < len; i++) {
 
 				$div = $divs.eq(i);
-				console.log(i);
 
 				offset = $div.offset().top;
 
@@ -39,9 +41,57 @@ $(function() {
 
 	$(window).on('scroll', parallax);
 
+	//*************
+	//SLIDE-DOWN LOGIN & SIGNUP
+	//*************
 	$('.pull-me').click(function(){
     $('.panel').slideToggle('slow');
     });
 
+	//*************
+	//CUSTOM TEXT EVENT HANDLING
+	//*************
+
+	$('#send-text').click(function(){
+		console.log("button was clicked");
+		var number = $('#phone-num').val();
+
+		$.ajax({
+			url: '/welcome',
+			type: 'post',
+			dataType: 'json',
+			data: {phone_num: number}
+		})
+			.success(function(data) {
+				console.log("text was sent!")
+			});
+			$('#phone-num').val("");
+	});
+
+	$("#register-btn").click(function(){
+  	$(".register").slideToggle(1500);
+	});
+
+	$("#sign-in-btn").click(function(){
+  	$(".sign-in").slideToggle(1500);
+	});
+
 });
+
+// $(function() {
+// 	// activate sign up modal from
+//   $sign_up_form = $("form#sign_up_user");
+// 	$sign_up_form.on("submit", function(event){
+// 	  $.ajax({	url: '/users',
+//    						method: "post",
+// 	  					format: "json",
+// 	  					data: $sign_up_form.serialize()
+// 	  				}
+// 	  ).done(function(data) {
+// 	  	console.log(data);
+// 	  	if (data.success){
+// 	  		game_app.signUp(data)
+// 	  	}
+// 	  });
+// 	});
 

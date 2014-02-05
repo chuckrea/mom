@@ -4,6 +4,6 @@ Mom::Application.routes.draw do
 
   post 'welcome', to: "welcome#create"
 
-  devise_for :users
+  devise_for :users, :controllers => {registrations: 'registrations', sessions: 'sessions'}
   
 end
