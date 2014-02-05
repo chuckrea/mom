@@ -1,5 +1,15 @@
+
+
 $(function() {
 	
+
+
+	//***********
+	//Animate.css
+	//***********
+
+   $('h1').addClass('animated bounceInLeft');
+
 	//**************
 	// PARALLAX
 	//**************
