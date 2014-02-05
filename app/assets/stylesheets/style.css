@@ -1,156 +1,205 @@
+/* html5doctor.com Reset v1.6.1 - http://cssreset.com */
+/*html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}nav ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:none}a{margin:0;padding:0;font-size:100%;vertical-align:baseline;background:transparent}ins{background-color:#ff9;color:#000;text-decoration:none}mark{background-color:#ff9;color:#000;font-style:italic;font-weight:bold}del{text-decoration:line-through}abbr[title],dfn[title]{border-bottom:1px dotted;cursor:help}table{border-collapse:collapse;border-spacing:0}hr{display:block;height:1px;border:0;border-top:1px solid #ccc;margin:1em 0;padding:0}input,select{vertical-align:middle}*/
+
 body {
   font-size: 18px;
-}
-
-.inactive {
-  visibility: hidden;
-  display: none;
-}
-
-.button_to {
-  display: inline-block;
-  margin-top: 7px;
+  background-color: #222222;
 }
 
 nav {
-  height: 50px;
-  background-color: slategray;
- 
+  padding-right: 15px;
+  text-align: right;
+  height: 20px;
+  font-family: 'Helvetica Neue';
 }
 
-.photo1 {
-  background-color: #040404;
+a {
+  color: white;
+  padding: 10px;
 }
 
-.circle-photo {
-  background-image: url('mom7.jpg'); 
-  height: 220px;
-  width: 220px;
+h1 {
+  font-family: 'Pacifico', cursive;
+  font-size: 4em;
+  padding-left: 45px;
+  padding-top: 115px;
+  -webkit-margin-after: -0.33em;
+}
+
+h2 {
+  font-family: 'Pacifico', cursive;
+  font-size: 3em;
+  /*-webkit-margin-after: 0;*/
+/*  padding-left: 20px;*/
+}
+
+h3.tagline {
+  font-family: 'Belleza', sans-serif;
+  font-size: 1.5em;
+  padding-left: 165px;
+  -webkit-margin-before: 0em; 
+  letter-spacing: 3px;
+  word-spacing: 4.5px;
+  padding-top: 18px;
+}
+
+h3 {
+  font-family: 'Belleza', sans-serif;
+  font-size: 1.5em;
+}
+
+.circle-photo-one {
+    background-image: url('../images/mom7.jpg');
+  height: 335px;
+  width: 335px;
   border-radius: 100%;
   display: inline-block;
+  float: right;
+  margin-top: -260px;
+  margin-right: 71px;
 }
 
-.circle-photo-two {
-  background-image: url('mom7.jpg'); 
-  height: 220px;
-  width: 220px;
-  border-radius: 100%;
-  display: inline-block;
+/*.circle-photo-two {
+  background-image: url('../images/mom7.jpg'); 
+    height: 220px;
+    width: 220px;
+    border-radius: 100%;
+    display: inline-block;
+    float: right;
+  margin-right: 289px;
+  margin-top: -55px;
+}*/
+
+.thin-first {
+  height: 100px;
+  background-color: cyan;
 }
 
-.word-wrap {
-  display: inline-block;
-  padding-right: 250px;
+.thin-second {
+  height: 100px;
+  background-color: cyan;
 }
 
-
-.photo2 {
-/*  background-image:url('50smomcleaning.png');
-  background-size: cover;*/
-/*  background-position: 50 150;*/
-
-}
-.last-photo {
-/*  background-image:url('50smomcleantable.jpg');
-  background-size: cover;*/
-  /*background-position:*/
-    background-color: #040404;
+ul, menu, dir {
+-webkit-padding-start: 0px;
 }
 
-.photo4 {
-/*  background-image:url('mom4.jpg');
-  background-size: cover;*/
-  /*background-position:*/
-}
-.photo5 {
-/*  background-image:url('mom5.jpeg');
-  background-size: cover;*/
-  /*background-position:*/
-}
-.photo6 {
-/*  background-image:url('mom6.jpg');
-  background-size: cover;*/
-  /*background-position:*/
-}
-.photo7 {
-/*  background-image:url('mom7.jpg');
-  background-size: cover;
-  background-position: 100px -200px;*/
-}
-.photo8 {
-/*  background-image:url('mom8.jpeg');
-  background-size: cover;*/
-  /*background-position:*/
-}
-
-.thin-test {
-	height: 100px;
-}
 
 ul li {
   list-style: none;
   overflow: hidden;
-  height: 550px;
+  height: 500px;
   position:relative;
 }
 
-ul li .text-weather, .text-food, .text-transportation {
-  position: absolute;
-  top: 50px;
-  right: 75px;
-  color: gray;
-  text-shadow: 2px 2px 4px black;
-  /*color: #000000;*/
-  background: rgba(255,255,255,0.0);
-  font-family: 'Pacifico', cursive;
-	
-}
-
-ul li .text-food {
-  position: absolute;
-  top: 50px;
-  left: 75px;
-}
-
-.text-weather h1, .text-food h1, .text-transportation h1 {
-  font-family: 'Pacifico', cursive;
-}
-
-
-ul li .text-mom {
-  position: absolute;
-  margin: 0 auto;
-  top: 50px;
-  left: 50px;
-  color: white;
-  text-shadow: 2px 2px 4px black;
-  /*color: #000000;*/
-  background: rgba(255,255,255,0);
-  font-size: 60px; 
-  padding-bottom: 40px;
-}
-
-<<<<<<< HEAD
-.text-mom h1 {
-  color: #FFFAFA;
-=======
-.text-mom h1, .text-mom h2, .text-mom h3 {
-  color: white;
->>>>>>> 45b8e86e72c5694a5263fe6f781d2a59da2829cf
-  font-family: 'Pacifico', cursive;
-  font-size: 1em; 
-}
-
-.text-mom h2 {
-  color: #FFFAFA;
-  font-family: 'Arial';
-  font-size: .5em;
-  padding-left: 15px;
+li {
+  position: relative;
+  top: -50px;
 }
 
 .parallax-background {
-  height: 900px;
+  height: 425px;
+  background-size: cover;
+}
+
+.first {
+  background-color: lightblue;
+}
+
+.second {
+  background-color: yellow;
+}
+.weather-header {
+  text-align: right;
+  margin: 0;
+}
+.weather-photo {
+  background-image: url('../images/partly-cloudy-day-icon.png');
+  background-size: cover;
+  display: inline-block;
+  height: 350px;
+  width: 350px;
+  margin-left: 80px;
+  margin-top: 15px;
+}
+
+.weather-copy {
+  padding: 10px;
+  height: 45px;
+  width: 600px;
+  text-align: right;
+  padding-bottom: 50px;
+}
+
+.eat-photo {
+  background-image: url('../images/mom4.jpg');
+  display: inline-block;
+  height: 350px;
+  width: 350px;
+  border-radius: 100%;
+  float: right;
+  margin-top: 35px;
+  margin-right: 100px;
+}
+.eat-copy {
+  height: 45px;
+  width: 600px;
+  margin-bottom: 22px;
+  margin-top: 15px;
+  padding: 15px;
+}
+.eat-tagline {
+  text-align: right;
+  padding-top: 45px;
+}
+.eat-header {
+  margin: 0;
+}
+.third {
+  background-color: green;
+}
+
+.fourth {
+  background-color: pink;
+}
+
+.late-header {
+  text-align: right;
+}
+
+.late-photo {
+  background-image: url('../images/50smomcleantable.jpg');
+  height: 350px; 
+  width: 350px;
+  border-radius: 100%;
+  display: inline-block; 
+  margin-left: 30px;
+  margin-top: 30px;
+}
+
+.late-copy {
+  height: 45px;
+  width: 600px;
+margin-bottom: 55px;
+  margin-top: 15px;
+  padding: 15px;
 }
 
 
+.text-first {
+  /*display: inline;*/
+}
 
+.text-second {
+  display: inline-block;
+}
+.text-third {
+  display: inline-block;
+  margin-left: 95px;
+  margin-top: 50px;
+}
+
+.text-fourth {
+  display: inline-block;
+  padding-left: 75px;
+}
