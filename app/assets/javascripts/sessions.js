@@ -48,17 +48,17 @@ $(function() {
   mom_app = {
     // actions
     signIn: function(data){
-      $(".sign-in").toggle();
+      $(".sign-in").slideToggle(1500);
       mom_app.loggedIn(data);
-      location.reload();
+      //location.reload();    
     },
 
     signUp: function(data){
       
-      $(".register").toggle();
+      $(".register").slideToggle(1500);
   
       mom_app.loggedIn(data);
-      location.reload();
+      //location.reload();
     },
 
     logOut: function(data){

@@ -12,12 +12,15 @@
 </head>
 <body>
   <nav>
-  <% if current_user %>
-    Welcome, <%= current_user.email%> <button id="logout_link">Logout</button><%= button_to "Home", root_path %>
-  <% else %>
-    <button id="register-btn">Register</button>
-    <button id="sign-in-btn">Sign In</button>
-    <% end %>
+  <div id="login-wrap">
+    <div id="logged_in_menu" class="inactive">
+      <button id="logout_link">Logout</button>
+    </div>
+    <div id="logged_out_menu" class="inactive">
+      <button id="register-btn">Register</button>
+      <button id="sign-in-btn">Sign In</button>
+    </div>
+  </div>
 </nav>
 <div class="register" style="display: none"><%= render partial: "layouts/sign_up" %></div>
 <div class="sign-in" style="display: none"><%= render partial: "layouts/sign_in" %></div>

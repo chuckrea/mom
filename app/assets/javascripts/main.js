@@ -69,11 +69,11 @@ $(function() {
 	});
 
 	$("#register-btn").click(function(){
-  	$(".register").toggle();
+  	$(".register").slideToggle(1500);
 	});
 
 	$("#sign-in-btn").click(function(){
-  	$(".sign-in").toggle();
+  	$(".sign-in").slideToggle(1500);
 	});
 
 });
