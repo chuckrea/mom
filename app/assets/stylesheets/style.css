@@ -49,7 +49,7 @@ h3 {
 }
 
 .circle-photo-one {
-    background-image: url('../images/mom7.jpg');
+    background-image: url('mom7.jpg');
   height: 335px;
   width: 335px;
   border-radius: 100%;
@@ -114,7 +114,7 @@ li {
   margin: 0;
 }
 .weather-photo {
-  background-image: url('../images/partly-cloudy-day-icon.png');
+  background-image: url('partly-cloudy-day-icon.png');
   background-size: cover;
   display: inline-block;
   height: 350px;
@@ -132,7 +132,7 @@ li {
 }
 
 .eat-photo {
-  background-image: url('../images/mom4.jpg');
+  background-image: url('mom4.jpg');
   display: inline-block;
   height: 350px;
   width: 350px;
@@ -168,7 +168,7 @@ li {
 }
 
 .late-photo {
-  background-image: url('../images/50smomcleantable.jpg');
+  background-image: url('50smomcleantable.jpg');
   height: 350px; 
   width: 350px;
   border-radius: 100%;
