@@ -16,22 +16,23 @@
   <div><%= f.label :first_name %><br />
   <%= f.text_field :first_name %></div>
   <div><%= f.label :email %><br />
-  <%= f.email_field :email, :autofocus => true %></div>
+  <%= f.email_field :email, :autofocus => true, placeholder: "Address" %></div>
 
   <div><%= f.label :password %><br />
-  <%= f.password_field :password %></div>
+  <%= f.password_field :password, placeholder: "Password" %></div>
 
   <div><%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation %></div>
+  <%= f.password_field :password_confirmation, placeholder: "Password" %></div>
 
   <div><%= f.label :phone_number %><br />
-  <%= f.text_field :phone_number %></div>
+  <%= f.text_field :phone_number, placeholder: "Phone Number" %></div>
 
   <div><%= f.label :address %><br />
-  <%= f.text_field :location, placeholder: "107 Ash Drive Great Neck, NY 11021" %></div>
+  <%= f.text_field :location, placeholder: "Address" %></div>
 
   <div><%= f.label :zip_code %><br />
   <%= f.text_field :zip_code, placeholder: "Zip Code" %></div>
+
 
   <div><%= f.submit "Sign up" %></div>
 <% end %>
