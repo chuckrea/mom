@@ -10,7 +10,8 @@ $(function() {
     ).done(function(data) {
       console.log(data);
       if (data.success){
-        mom_app.signUp(data)
+        mom_app.signUp(data);
+        mom_app.confirmText(data);
       }
     });
   });
@@ -51,6 +52,18 @@ $(function() {
       $(".sign-in").slideToggle(1500);
       mom_app.loggedIn(data);
       //location.reload();    
+    },
+
+    confirmText: function(data){
+      $.ajax({
+        url: '/welcome',
+        type: 'post',
+        dataType: 'json',
+        data: {phone_num: data.current_user.phone_number}
+      })
+        .success(function(data) {
+        console.log("text was sent!")
+        });
     },
 
     signUp: function(data){
