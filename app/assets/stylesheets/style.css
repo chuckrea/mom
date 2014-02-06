@@ -243,11 +243,36 @@ li {
 .late-copy {
   height: 45px;
   width: 600px;
-margin-bottom: 55px;
+  margin-bottom: 55px;
   margin-top: 15px;
   padding: 15px;
 }
+.test-text-header {
+  margin-top: 200px;
+}
 
+#phone-num {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 55px;
+}
+#phone-num[placeholder]{
+font-weight:bold;
+    color:red;
+    text-align:center;
+
+}
+.test-text-copy {
+  height: 45px;
+  width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 40px
+}
+
+.test-text-tagline {
+  margin-top: 60px;
+}
 
 .text-first {
   /*display: inline;*/
@@ -265,6 +290,10 @@ margin-bottom: 55px;
 .text-fourth {
   display: inline-block;
   padding-left: 75px;
+}
+
+.text-fifth {
+  text-align: center;
 }
 
 #logged_in_menu {
