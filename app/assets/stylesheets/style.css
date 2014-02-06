@@ -12,9 +12,14 @@ body {
   display: none;
 }
 
-label {
-  color: white;
-  display: inline;
+.sign-up-form {
+  
+  margin: 5px;
+  float: left;
+}
+
+.sign-up-button {
+  clear: both;
 }
 
 .session {
@@ -28,6 +33,7 @@ label {
 
 .container {
   top: 15px;
+  clear: both;
 }
 nav {
   background-color: #252a2e;
