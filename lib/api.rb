@@ -3,6 +3,7 @@ require 'open-uri'
 require 'sanitize'
 require 'nokogiri'
 
+      def mta_data(user)
         #Opens and Cleans XML
         filestring = ""
         f = open('http://www.mta.info/status/serviceStatus.txt')
@@ -15,7 +16,7 @@ require 'nokogiri'
         #Returns last update time
         time = doc.xpath('//service//timestamp')
         last_update = Sanitize.clean!("#{time}")
-
+        
         #RETURNS LINES ARRAY
         @lines =[] 
         names = doc.xpath('//subway//name').map {|name| name}
@@ -39,11 +40,10 @@ require 'nokogiri'
         description << status.join.split.join(" ")
         end
 
-        puts @lines
-        puts "***********************************"
-
-        puts @status
-        puts "***********************************"
+        return mta_status = @status[@lines.index(user.line)]
+        
+        
+      end
 
   def get_farmersmarkets(user)
 
@@ -137,11 +137,6 @@ require 'nokogiri'
       end
   end
 
-  def get_mta(user)
-    @mta_status = @status[@lines.index(user.line)]
-    puts @status
-    puts @lines
-  end 
 
   def send_weather_texts
 
@@ -170,11 +165,11 @@ require 'nokogiri'
 
     users = User.all
     users.each do |user|
-      line_status = get_mta(user)
+      line_status = mta_data(user)
       @client.account.messages.create(
         :from => '+16463623890',
         :to => user.phone_number,
-        :body => line_status 
+        :body => "Hey honey! Just spoke to Martha's son and he told me your train status.   " + user.line + ": " + line_status + "     Love you."  
       )
     end
   end
