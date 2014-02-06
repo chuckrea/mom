@@ -3,7 +3,7 @@
 
 body {
   font-size: 18px;
-  background-color: #222222;
+  background-color: #FFFAFA;
 }
 
 
@@ -12,9 +12,14 @@ body {
   display: none;
 }
 
-label {
-  color: white;
-  display: inline;
+.sign-up-form {
+  
+  margin: 5px;
+  float: left;
+}
+
+.sign-up-button {
+  clear: both;
 }
 
 .session {
@@ -28,11 +33,13 @@ label {
 
 .container {
   top: 15px;
+  clear: both;
 }
 nav {
+  background-color: #252a2e;
   padding-right: 15px;
   text-align: right;
-  height: 20px;
+  height: 45px;
   font-family: 'Helvetica Neue';
 }
 
@@ -73,7 +80,8 @@ h3 {
 }
 
 .circle-photo-one {
-  background-image: url('mom7.jpg');
+  background-image: url('mom6.jpg');
+  padding-left: 120px;
   height: 335px;
   width: 335px;
   border-radius: 100%;
@@ -150,11 +158,11 @@ li {
   top: 0px;
 }
 .first {
-  background-color: lightblue;
+  background-color: #FFFAFA;
 }
 
 .second {
-  background-color: yellow;
+  background-color: #F0EAD6;
 }
 .weather-header {
   text-align: right;
@@ -203,7 +211,7 @@ li {
   margin: 0;
 }
 .third {
-  background-color: green;
+  background-color: #F0EAD6;
 }
 
 .fourth {
@@ -259,8 +267,14 @@ margin-bottom: 55px;
   display: inline-block;
 }
 
+.sign-in-btn {
+  font-family: Helvetica;
+}
 
-
+.register-btn {
+  font-family: Helvetica;
+  background-color: none;
+}
 
 
 
