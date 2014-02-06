@@ -8,8 +8,8 @@ body {
 
 
 .inactive {
-  visibility: hidden;
-  display: none;
+  /*visibility: hidden;*/
+  /*display: none;*/
 }
 
 .sign-up-form {
@@ -63,6 +63,7 @@ h1 {
   padding-left: 45px;
   padding-top: 115px;
   -webkit-margin-after: -0.33em;
+  text-shadow: 2px 3px 1px dimgrey;
 }
 
 h2 {
@@ -249,11 +250,36 @@ li {
 .late-copy {
   height: 45px;
   width: 600px;
-margin-bottom: 55px;
+  margin-bottom: 55px;
   margin-top: 15px;
   padding: 15px;
 }
+.test-text-header {
+  margin-top: 200px;
+}
 
+#phone-num {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 55px;
+}
+#phone-num[placeholder]{
+font-weight:bold;
+    color:red;
+    text-align:center;
+
+}
+.test-text-copy {
+  height: 45px;
+  width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 40px
+}
+
+.test-text-tagline {
+  margin-top: 60px;
+}
 
 .text-first {
   /*display: inline;*/
@@ -273,21 +299,16 @@ margin-bottom: 55px;
   padding-left: 75px;
 }
 
+.text-fifth {
+  text-align: center;
+}
+
 #logged_in_menu {
   display: inline-block;
 }
 
 #logged_out_menu {
   display: inline-block;
-}
-
-.sign-in-btn {
-  font-family: Helvetica;
-}
-
-.register-btn {
-  font-family: Helvetica;
-  background-color: none;
 }
 
 

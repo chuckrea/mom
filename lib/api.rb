@@ -138,9 +138,7 @@ require 'nokogiri'
       end
   end
 
-
   def send_weather_texts
-
     users = User.all
     users.each do |user|
       forecast = get_forecast(user)
@@ -153,15 +151,33 @@ require 'nokogiri'
   end
 
   def send_mta_text
-    
     users = User.all
     users.each do |user|
       line_status = mta_data(user)
       @client.account.messages.create(
         :from => @mom_number,
         :to => user.phone_number,
-        :body => "Hey honey! Just spoke to Martha's son and he told me your train status.   " + user.line + ": " + line_status + "     Love you."  
+        :body => "Hey honey! Just spoke to Martha's son and he told me your train status.   " + user.line + ": " + line_status + " Love you."  
       )
     end
   end
+
+  def send_annoying_text 
+    annoying_array = [
+      "Call your mother", 
+      "Haven't heard from you in a few days. R U STILL ALIVE?", 
+      "Your grandfather's cousin's uncle is in from Florida this weekend, you should go see him.",  
+      "Nanny and Poppy are back from Florida and they're coming over. It's gonna be a big thing, I hope you're coming."
+    ]
+    annoying_text = annoying_array.sample 
+    users = User.where(is_annoying: true)
+    users.each do |user|
+      @client.account.messages.create(
+        :from => @mom_number,
+        :to => user.phone_number,
+        :body => annoying_text
+      )
+    end
+  end
+
 end
