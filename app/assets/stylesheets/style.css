@@ -8,8 +8,8 @@ body {
 
 
 .inactive {
-  visibility: hidden;
-  display: none;
+  /*visibility: hidden;*/
+  /*display: none;*/
 }
 
 .sign-up-form {
@@ -274,15 +274,6 @@ margin-bottom: 55px;
 
 #logged_out_menu {
   display: inline-block;
-}
-
-.sign-in-btn {
-  font-family: Helvetica;
-}
-
-.register-btn {
-  font-family: Helvetica;
-  background-color: none;
 }
 
 
