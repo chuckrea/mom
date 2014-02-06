@@ -28,6 +28,7 @@ $(function() {
   //   //             }
   //   //  };
   //  }); 
+
 $sign_up_form = $("form#sign_up_user");
   $sign_up_form.on("submit", function(event){
     $.ajax({  url: '/users',
