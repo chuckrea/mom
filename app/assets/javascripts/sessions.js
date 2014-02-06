@@ -27,6 +27,7 @@ $(function() {
       console.log(data);
       if (data.success){
         mom_app.signIn(data);
+
       }
     });
   });

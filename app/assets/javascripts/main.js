@@ -49,7 +49,7 @@ $(function() {
 
 	})();
 
-	
+	// $(window).on('scroll', parallax);
 
 	//*************
 	//SLIDE-DOWN LOGIN & SIGNUP
@@ -86,7 +86,7 @@ $(function() {
   	$(".sign-in").slideToggle(1500);
 	});
 
-	$(window).on('scroll', parallax);
+
 
 });
 

@@ -3,6 +3,13 @@ require 'open-uri'
 require 'sanitize'
 require 'nokogiri'
 
+      def connect
+        @account_sid = ENV["TWILIO_ACCOUNT_SID"]
+        @auth_token = ENV["TWILIO_AUTH_TOKEN"]
+        @mom_number = ENV["TWILIO_PHONE_NUMBER"]
+        @client = Twilio::REST::Client.new @account_sid, @auth_token
+      end
+
       def mta_data(user)
         #Opens and Cleans XML
         filestring = ""
@@ -35,14 +42,14 @@ require 'nokogiri'
         #RETURNS DESCRIPTION ARRAY
         status_description = doc.xpath('//subway//name').map {|name| name.next_sibling.next_sibling.text.split("\n").drop(2)}
 
-        description =[]
+        description = []
         status_description.each do |status|
         description << status.join.split.join(" ")
         end
-
-        return mta_status = @status[@lines.index(user.line)]
-        
-        
+        # mta_status = @status[@lines.index(user.line)] 
+        puts @status
+        puts @lines
+        return @status[@lines.index(user.line)]
       end
 
   def get_farmersmarkets(user)
@@ -59,45 +66,26 @@ require 'nokogiri'
   end
 
   def get_restaurants(user)
-
     Yelp.configure(:yws_id     => ENV["YELP_YWS_ID"],
               :consumer_key    => ENV["YELP_CONSUMER_KEY"],
               :consumer_secret => ENV["YELP_CONSUMER_SECRET"],
               :token           => ENV["YELP_TOKEN"],
-              :token_secret    => ENV["YELP_TOKEN_SECRET"])
-
-
+              :token_secret    => ENV["YELP_TOKEN_SECRET"]
+              )
     client = Yelp::Client.new
-
     include Yelp::V2::Search::Request
-
     request = GeoPoint.new(
        :term => "restaurant",  
        :latitude => user.latitude,  
        :longitude => user.longitude,  
        :limit => 15,  
        :sort => 1)  
-
     response = client.search(request)
-
     response["businesses"].each do |biz|
       yelp = YelpInfo.create(restaurant_name: biz["name"], cuisine_type: biz["categories"][0][0], address: biz["location"]["display_address"])
       user.yelp_infos << yelp
     end
-    # # Name
-    # name = response["businesses"][0]["name"]
-    # # Address
-    # address = response["businesses"][0]["location"]["display_address"]
-    # # Category
-    # category = response['businesses'][0]["categories"][1][0]
-
   end
-
-  # Twilio API variables
-  @account_sid = ENV["TWILIO_ACCOUNT_SID"]
-  @auth_token = ENV["TWILIO_AUTH_TOKEN"]
-  @mom_number = ENV["TWILIO_PHONE_NUMBER"]
-  @client = Twilio::REST::Client.new @account_sid, @auth_token
 
   def send_restaurants(user)
     account_sid = "AC2e3cd4670d5a455fb0e6da2e5ddd5eeb"
@@ -113,8 +101,7 @@ require 'nokogiri'
         :from => @mom_number,
         :to => user.phone_number,
         :body => "#{restaurants[0]}\n#{restaurants[1]}\n#{restaurants[2]}"
-      )
-      
+      )  
   end
 
   def get_forecast(user)
@@ -137,12 +124,10 @@ require 'nokogiri'
         return "It's #{temperature} degrees outside and #{summary}. Oh, it's so nice out it just makes me want to sit and have a glass of white wine and think about every single thing you ever did as a child."
       when temperature > 85
         return "It's #{temperature} degrees outside and #{summary}. This is either the heat or the menopause talking, but I don't think I ever loved your father."
-      end
+    end
   end
 
-
   def send_weather_texts
-
     users = User.all
     users.each do |user|
       forecast = get_forecast(user)
@@ -164,15 +149,33 @@ require 'nokogiri'
   end
 
   def send_mta_text
-    
     users = User.all
     users.each do |user|
       line_status = mta_data(user)
       @client.account.messages.create(
         :from => @mom_number,
         :to => user.phone_number,
-        :body => "Hey honey! Just spoke to Martha's son and he told me your train status.   " + user.line + ": " + line_status + "     Love you."  
+        :body => "Hey honey! Just spoke to Martha's son and he told me your train status.   " + user.line + ": " + line_status + " Love you."  
       )
     end
   end
+
+  def send_annoying_text 
+    annoying_array = [
+      "Call your mother", 
+      "Haven't heard from you in a few days. R U STILL ALIVE?", 
+      "Your grandfather's cousin's uncle is in from Florida this weekend, you should go see him.",  
+      "Nanny and Poppy are back from Florida and they're coming over. It's gonna be a big thing, I hope you're coming."
+    ]
+    annoying_text = annoying_array.sample 
+    users = User.where(is_annoying: true)
+    users.each do |user|
+      @client.account.messages.create(
+        :from => @mom_number,
+        :to => user.phone_number,
+        :body => annoying_text
+      )
+    end
+  end
+
 end
