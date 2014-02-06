@@ -1,6 +1,7 @@
 class WelcomeController < ApplicationController
 require "api.rb"
 include Api
+connect
 
   def index
   end
@@ -18,8 +19,8 @@ include Api
       format.html
       format.json do
       # set up a client to talk to the Twilio REST API
-      client = Twilio::REST::Client.new account_sid, auth_token
-      client.account.messages.create(
+      # client = Twilio::REST::Client.new account_sid, auth_token
+      @client.account.messages.create(
           :from => '+16463623890',
           :to => params[:phone_num],
           :body => responses.sample
