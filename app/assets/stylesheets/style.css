@@ -8,8 +8,8 @@ body {
 
 
 .inactive {
-  /*visibility: hidden;*/
-  /*display: none;*/
+  visibility: hidden;
+  display: none;
 }
 
 .sign-up-form {
@@ -183,6 +183,10 @@ li {
 
 .fourth {
   background-color: #F0EAD6;
+}
+
+.fifth {
+  background-color: #FFFAFA;
 }
 
 .weather-header {
