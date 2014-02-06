@@ -18,6 +18,14 @@ body {
   float: left;
 }
 
+.checkbox {
+  width: 150px;
+}
+
+.checkmark {
+  margin-top: -15px;
+}
+
 .sign-up-button {
   clear: both;
 }
