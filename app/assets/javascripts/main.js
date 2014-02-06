@@ -8,7 +8,7 @@ $(function() {
 	//Animate.css
 	//***********
 
-   $('h1').addClass('animated bounceInLeft');
+   // $('h1').addClass('animated bounceInLeft');
 
 	//**************
 	// PARALLAX
