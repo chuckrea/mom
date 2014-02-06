@@ -93,6 +93,28 @@ require 'nokogiri'
 
   end
 
+  def send_restaurants(user)
+    account_sid = 'AC2e3cd4670d5a455fb0e6da2e5ddd5eeb'
+    auth_token = 'b40b07ba1a2d3d92bb5e9e2c77330c3b'
+
+    # set up a client to talk to the Twilio REST API
+    @client = Twilio::REST::Client.new account_sid, auth_token
+
+    restaurants = user.yelp_infos.sample(3).map {|restaurant| "#{restaurant.restaurant_name}\n#{restaurant.address}\n#{restaurant.cuisine_type}"}
+    @client.account.messages.create(
+        :from => '+16463623890',
+        :to => user.phone_number,
+        :body => "Mom here! With your metabolism you shouldn't eat too much, but here are some nearby restaurants if you're hungry:"
+      )
+    @client.account.messages.create(
+        :from => '+16463623890',
+        :to => user.phone_number,
+        :body => "#{restaurants[0]}\n#{restaurants[1]}\n#{restaurants[2]}"
+      )
+
+      
+  end
+
   def get_forecast(user)
     url = "https://api.forecast.io/forecast/b20ed2cf518265035a434036f7522627/#{user.latitude},#{user.longitude}"
     response = JSON.parse(HTTParty.get(url).body)
