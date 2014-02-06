@@ -1,34 +1,6 @@
 var mom_app, username;
 $(function() {
-  // $sign_up_form = $("form#sign_up_user");
-  // $sign_up_form.on("submit", function(event){
-    
-  //   // function validateEmail(email) {
-  //   //     var exp = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-  //   //     if (exp.test(email) == email){
-  //   //       return email 
-  //   //     };
-
-  //   // function validate() {
-  //   //   var email = $("#user_email").val();
-  //   //   if (validateEmail(email) == email){
-  //         $.ajax({  
-  //           url: '/users',
-  //           method: "post",
-  //           format: "json",
-  //           data: $sign_up_form.serialize()
-  //           }.done(function(data) {
-  //             console.log(data);
-  //             if (data.success){
-  //               mom_app.signUp(data)
-  //             }
-  //           })
-  //   //     } else {
-  //   //             window.alert("There's no fooling your mother! Enter a valid email address, honey.");
-  //   //             }
-  //   //  };
-  //  }); 
-$sign_up_form = $("form#sign_up_user");
+  $sign_up_form = $("form#sign_up_user");
   $sign_up_form.on("submit", function(event){
     $.ajax({  url: '/users',
               method: "post",
@@ -38,7 +10,8 @@ $sign_up_form = $("form#sign_up_user");
     ).done(function(data) {
       console.log(data);
       if (data.success){
-        mom_app.signUp(data)
+        mom_app.signUp(data);
+        mom_app.confirmText(data);
       }
     });
   });
@@ -54,6 +27,7 @@ $sign_up_form = $("form#sign_up_user");
       console.log(data);
       if (data.success){
         mom_app.signIn(data);
+
       }
     });
   });
@@ -79,6 +53,18 @@ $sign_up_form = $("form#sign_up_user");
       $(".sign-in").slideToggle(1500);
       mom_app.loggedIn(data);
       //location.reload();    
+    },
+
+    confirmText: function(data){
+      $.ajax({
+        url: '/welcome',
+        type: 'post',
+        dataType: 'json',
+        data: {phone_num: data.current_user.phone_number}
+      })
+        .success(function(data) {
+        console.log("text was sent!")
+        });
     },
 
     signUp: function(data){
