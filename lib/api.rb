@@ -3,6 +3,7 @@ require 'open-uri'
 require 'sanitize'
 require 'nokogiri'
 
+      def mta_data(user)
         #Opens and Cleans XML
         filestring = ""
         f = open('http://www.mta.info/status/serviceStatus.txt')
@@ -15,7 +16,7 @@ require 'nokogiri'
         #Returns last update time
         time = doc.xpath('//service//timestamp')
         last_update = Sanitize.clean!("#{time}")
-
+        
         #RETURNS LINES ARRAY
         @lines =[] 
         names = doc.xpath('//subway//name').map {|name| name}
@@ -39,11 +40,10 @@ require 'nokogiri'
         description << status.join.split.join(" ")
         end
 
-        puts @lines
-        puts "***********************************"
-
-        puts @status
-        puts "***********************************"
+        return mta_status = @status[@lines.index(user.line)]
+        
+        
+      end
 
   def get_farmersmarkets(user)
 
@@ -60,11 +60,11 @@ require 'nokogiri'
 
   def get_restaurants(user)
 
-    Yelp.configure(:yws_id     => '55vsTZcAU8kH_LEQj_oIjA',
-              :consumer_key    => 'I7sXrBiqGJXGNmZGMeOiJQ',
-              :consumer_secret => 'JdMoZU8iGn6iQlvuP2Mk5-EsPt8',
-              :token           => '-_031yEPjKzFSJuzTovFdp0M5RufpYC1',
-              :token_secret    => 'USpbVVJmAEWq_m4mykUJbcK4kNc')
+    Yelp.configure(:yws_id     => ENV["YELP_YWS_ID"],
+              :consumer_key    => ENV["YELP_CONSUMER_KEY"],
+              :consumer_secret => ENV["YELP_CONSUMER_SECRET"],
+              :token           => ENV["YELP_TOKEN"],
+              :token_secret    => ENV["YELP_TOKEN_SECRET"])
 
 
     client = Yelp::Client.new
@@ -93,30 +93,31 @@ require 'nokogiri'
 
   end
 
+  # Twilio API variables
+  @account_sid = ENV["TWILIO_ACCOUNT_SID"]
+  @auth_token = ENV["TWILIO_AUTH_TOKEN"]
+  @mom_number = ENV["TWILIO_PHONE_NUMBER"]
+  @client = Twilio::REST::Client.new @account_sid, @auth_token
+
   def send_restaurants(user)
-    account_sid = 'AC2e3cd4670d5a455fb0e6da2e5ddd5eeb'
-    auth_token = 'b40b07ba1a2d3d92bb5e9e2c77330c3b'
 
-    # set up a client to talk to the Twilio REST API
-    @client = Twilio::REST::Client.new account_sid, auth_token
-
-    restaurants = user.yelp_infos.sample(3).map {|restaurant| "#{restaurant.restaurant_name}\n#{restaurant.address}\n#{restaurant.cuisine_type}"}
+    restaurants = user.yelp_infos.sample(3).map {|restaurant| "#{restaurant.restaurant_name}\n#{restaurant.address}\n#{restaurant.cuisine_type}\n"}
     @client.account.messages.create(
-        :from => '+16463623890',
+        :from => @mom_number,
         :to => user.phone_number,
         :body => "Mom here! With your metabolism you shouldn't eat too much, but here are some nearby restaurants if you're hungry:"
       )
     @client.account.messages.create(
-        :from => '+16463623890',
+        :from => @mom_number,
         :to => user.phone_number,
         :body => "#{restaurants[0]}\n#{restaurants[1]}\n#{restaurants[2]}"
       )
-
       
   end
 
   def get_forecast(user)
-    url = "https://api.forecast.io/forecast/b20ed2cf518265035a434036f7522627/#{user.latitude},#{user.longitude}"
+    forecast_api = ENV["FORECAST_API_KEY"]
+    url = "https://api.forecast.io/forecast/#{forecast_api}/#{user.latitude},#{user.longitude}"
     response = JSON.parse(HTTParty.get(url).body)
     temperature = response["currently"]["temperature"]
     summary = response["currently"]["summary"].downcase
@@ -137,25 +138,14 @@ require 'nokogiri'
       end
   end
 
-  def get_mta(user)
-    @mta_status = @status[@lines.index(user.line)]
-    puts @status
-    puts @lines
-  end 
 
   def send_weather_texts
-
-    account_sid = 'AC2e3cd4670d5a455fb0e6da2e5ddd5eeb'
-    auth_token = 'b40b07ba1a2d3d92bb5e9e2c77330c3b'
-
-    # set up a client to talk to the Twilio REST API
-    @client = Twilio::REST::Client.new account_sid, auth_token
 
     users = User.all
     users.each do |user|
       forecast = get_forecast(user)
       @client.account.messages.create(
-        :from => '+16463623890',
+        :from => @mom_number,
         :to => user.phone_number,
         :body => forecast
       )
@@ -163,18 +153,14 @@ require 'nokogiri'
   end
 
   def send_mta_text
-    account_sid = 'AC2e3cd4670d5a455fb0e6da2e5ddd5eeb'
-    auth_token = 'b40b07ba1a2d3d92bb5e9e2c77330c3b'
     
-    @client = Twilio::REST::Client.new account_sid, auth_token
-
     users = User.all
     users.each do |user|
-      line_status = get_mta(user)
+      line_status = mta_data(user)
       @client.account.messages.create(
-        :from => '+16463623890',
+        :from => @mom_number,
         :to => user.phone_number,
-        :body => line_status 
+        :body => "Hey honey! Just spoke to Martha's son and he told me your train status.   " + user.line + ": " + line_status + "     Love you."  
       )
     end
   end
