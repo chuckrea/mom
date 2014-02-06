@@ -3,7 +3,7 @@
 
 body {
   font-size: 18px;
-  background-color: #FFFAFA;
+  /*background-color: #FFFAFA;*/
 }
 
 
@@ -111,6 +111,8 @@ h3 {
   margin-top: -55px;
 }*/
 
+
+
 .thin-first {
   height: 100px;
   background-color: cyan;
@@ -156,6 +158,7 @@ li {
 .photo1 {
   background-image:url('mom10.jpg');
   background: cover;
+  height: 100px;
  
 }
 
@@ -173,6 +176,15 @@ li {
 .second {
   background-color: #F0EAD6;
 }
+
+.third {
+  background-color: #FFFAFA;
+}
+
+.fourth {
+  background-color: #F0EAD6;
+}
+
 .weather-header {
   text-align: right;
   margin: 0;
@@ -184,7 +196,7 @@ li {
   height: 350px;
   width: 350px;
   margin-left: 80px;
-  margin-top: 15px;
+  margin-top: 115px;
 }
 
 .weather-copy {
@@ -202,7 +214,7 @@ li {
   width: 350px;
   border-radius: 100%;
   float: right;
-  margin-top: 35px;
+  margin-top: 100px;
   margin-right: 100px;
 }
 .eat-copy {
@@ -219,13 +231,7 @@ li {
 .eat-header {
   margin: 0;
 }
-.third {
-  background-color: #F0EAD6;
-}
 
-.fourth {
-  background-color: pink;
-}
 
 .late-header {
   text-align: right;
@@ -238,17 +244,47 @@ li {
   border-radius: 100%;
   display: inline-block; 
   margin-left: 30px;
-  margin-top: 30px;
+  margin-top: 100px;
 }
 
 .late-copy {
   height: 45px;
   width: 600px;
-margin-bottom: 55px;
+  margin-bottom: 55px;
   margin-top: 15px;
   padding: 15px;
 }
 
+.late-tagline {
+  
+}
+
+.test-text-header {
+  margin-top: 200px;
+}
+
+#phone-num {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 55px;
+}
+#phone-num[placeholder]{
+font-weight:bold;
+    color:red;
+    text-align:center;
+
+}
+.test-text-copy {
+  height: 45px;
+  width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 40px
+}
+
+.test-text-tagline {
+  margin-top: 60px;
+}
 
 .text-first {
   /*display: inline;*/
@@ -260,12 +296,16 @@ margin-bottom: 55px;
 .text-third {
   display: inline-block;
   margin-left: 95px;
-  margin-top: 50px;
+  margin-top: 150px;
 }
 
 .text-fourth {
   display: inline-block;
   padding-left: 75px;
+}
+
+.text-fifth {
+  text-align: center;
 }
 
 #logged_in_menu {
