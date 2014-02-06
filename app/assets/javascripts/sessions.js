@@ -2,17 +2,26 @@ var mom_app, username;
 $(function() {
   $sign_up_form = $("form#sign_up_user");
   $sign_up_form.on("submit", function(event){
-    $.ajax({  url: '/users',
-              method: "post",
-              format: "json",
-              data: $sign_up_form.serialize()
-            }
-    ).done(function(data) {
-      console.log(data);
-      if (data.success){
-        mom_app.signUp(data)
-      }
-    });
+    
+
+
+
+
+      if true 
+        return                
+        $.ajax({  url: '/users',
+                  method: "post",
+                  format: "json",
+                  data: $sign_up_form.serialize()
+                }
+        ).done(function(data) {
+          console.log(data);
+          if (data.success){
+            mom_app.signUp(data)
+          }
+        });
+      else return 
+        window.alert("There's no fooling your mother! Enter a valid email address, honey.");
   });
 
   $sign_in_form = $('form#sign_in_user');

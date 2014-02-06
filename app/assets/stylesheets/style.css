@@ -49,6 +49,7 @@ h1 {
   padding-left: 45px;
   padding-top: 115px;
   -webkit-margin-after: -0.33em;
+  text-shadow: 2px 3px 1px dimgrey;
 }
 
 h2 {
