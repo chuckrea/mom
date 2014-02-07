@@ -1,7 +1,57 @@
 /* html5doctor.com Reset v1.6.1 - http://cssreset.com */
 /*html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}nav ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:none}a{margin:0;padding:0;font-size:100%;vertical-align:baseline;background:transparent}ins{background-color:#ff9;color:#000;text-decoration:none}mark{background-color:#ff9;color:#000;font-style:italic;font-weight:bold}del{text-decoration:line-through}abbr[title],dfn[title]{border-bottom:1px dotted;cursor:help}table{border-collapse:collapse;border-spacing:0}hr{display:block;height:1px;border:0;border-top:1px solid #ccc;margin:1em 0;padding:0}input,select{vertical-align:middle}*/
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
 
 /* Main view size*/ 
+
 
 body {
   font-size: 18px;
@@ -75,18 +125,21 @@ h2 {
 }
 
 h3.tagline {
-  font-family: 'Belleza', sans-serif;
+  /*font-family: 'Belleza', sans-serif;*/
   font-size: 1.5em;
-  padding-left: 165px;
-  -webkit-margin-before: 0em; 
+  padding-left: 185px;
+  -webkit-margin-before: 0em;
   letter-spacing: 3px;
-  word-spacing: 4.5px;
+  word-spacing: 1.5px;
   padding-top: 40px;
+  text-align: center;
+  display: inline-block;
 }
 
 h3 {
-  font-family: 'Belleza', sans-serif;
+  font-family: 'Merienda One', sans-serif;
   font-size: 1.5em;
+  text-align: center;
 }
 
 
@@ -133,7 +186,7 @@ ul, menu, dir {
 ul li {
   list-style: none;
   overflow: hidden;
-  height: 500px;
+  height: 440px;
   position:relative;
 }
 
@@ -169,7 +222,12 @@ li {
 }
 
 .banner {
-  top: 0px;
+  top: -11px;
+  height: 650px;
+  background-color: #FFFAFA;
+}
+.footer {
+  height: 650px;
 }
 .first {
   background-color: #FFFAFA;
@@ -198,7 +256,7 @@ li {
   height: 350px;
   width: 350px;
   margin-left: 80px;
-  margin-top: 115px;
+  margin-top: 20px;
 }
 
 .weather-copy {
@@ -216,7 +274,7 @@ li {
   width: 350px;
   border-radius: 100%;
   float: right;
-  margin-top: 100px;
+  margin-top: 35px;
   margin-right: 100px;
 }
 .eat-copy {
@@ -246,7 +304,7 @@ li {
   border-radius: 100%;
   display: inline-block; 
   margin-left: 30px;
-  margin-top: 100px;
+  margin-top: 30px;
 }
 
 .late-copy {
@@ -262,7 +320,7 @@ li {
 }
 
 .test-text-header {
-  margin-top: 200px;
+  margin-top: 130px;
 }
 
 #phone-num {
@@ -285,7 +343,7 @@ font-weight:bold;
 }
 
 .test-text-tagline {
-  margin-top: 60px;
+  margin-top: 100px;
 }
 
 .text-first {
@@ -294,16 +352,21 @@ font-weight:bold;
 
 .text-second {
   display: inline-block;
+  float: right;
+  margin-right: 100px;
+  margin-top: 110px;
 }
 .text-third {
   display: inline-block;
   margin-left: 95px;
-  margin-top: 150px;
+  margin-top: 105px;
 }
 
 .text-fourth {
   display: inline-block;
-  padding-left: 75px;
+  float: right;
+  margin-right: 100px;
+  margin-top: 135px;
 }
 
 .text-fifth {
