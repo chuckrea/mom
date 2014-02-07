@@ -145,13 +145,15 @@ require 'nokogiri'
 
   def send_mta_text
     users = User.where(mta: true)
-    users.each do |user|
-      line_status = mta_data(user)
-      @client.account.messages.create(
-        :from => @mom_number,
-        :to => user.phone_number,
-        :body => "Hey honey! Just spoke to Martha's son and he told me your train status.   " + user.line + ": " + line_status + " Love you."  
-      )
+      users.each do |user|
+        if user.line != nil
+          line_status = mta_data(user)
+          @client.account.messages.create(
+            :from => @mom_number,
+            :to => user.phone_number,
+            :body => "Hey honey! Just spoke to Martha's son and he told me your train status.   " + user.line + ": " + line_status + " Love you."  
+          )
+        end
     end
   end
 

@@ -85,11 +85,11 @@ body {
   margin: 30px 0 0 15px;
 }
 
-
 .container {
   top: 15px;
   clear: both;
 }
+
 nav {
   background-color: #252a2e;
   padding-right: 15px;
@@ -104,11 +104,10 @@ a {
 }
 
 h1 {
-
   font-family: 'Pacifico', cursive;
   font-size: 4em;
   padding-left: 45px;
-  padding-top: 115px;
+  padding-top: 190px;
   -webkit-margin-after: -0.33em;
   text-shadow: 2px 3px 1px dimgrey;
 }
@@ -121,11 +120,10 @@ h2 {
 }
 
 h3.tagline {
-
-  font-size: 1.5em;
-  padding-left: 185px;
+  font-size: 1.65em;
+  padding-left: 133px;
   -webkit-margin-before: 0em;
-  letter-spacing: 3px;
+  letter-spacing: 1px;
   word-spacing: 1.5px;
   padding-top: 40px;
   text-align: center;
@@ -133,22 +131,33 @@ h3.tagline {
 }
 
 h3 {
-  font-family: 'Merienda One', sans-serif;
+  font-family: 'Archivo Narrow', sans-serif;
   font-size: 1.5em;
   text-align: center;
   margin-top: 41px;
+}
+
+h3.test-text-tagline{
+  color: #27e6c3;
+  font-size: 1.5em;
+  font-family: "Merienda One", sans-serif;
+}
+
+p {
+  font-family: 'Archivo Narrow', sans-serif;
+  font-size: 1.3em;
 }
 
 
 .circle-photo-one {
   background-image: url('mom6.jpg');
   padding-left: 120px;
-  height: 335px;
+  height: 500px;
   width: 335px;
   border-radius: 100%;
   display: inline-block;
   float: right;
-  margin-top: -180px;
+  margin-top: -246px;
   margin-right: 71px;
 }
 
@@ -162,8 +171,6 @@ h3 {
   margin-right: 289px;
   margin-top: -55px;
 }*/
-
-
 
 .thin-first {
   height: 100px;
@@ -183,7 +190,7 @@ ul, menu, dir {
 ul li {
   list-style: none;
   overflow: hidden;
-  height: 440px;
+  height: 665px;
   position:relative;
 }
 
@@ -195,15 +202,13 @@ li {
 
 /* PARALLAX */
 
-
-
 .parallax {
   position: relative;
   top: 15px;
 }
 
 .parallax-background {
-  height: 700px;
+  height: 1000px;
   background-size: cover;
 }
 
@@ -231,7 +236,7 @@ li {
 }
 
 .second {
-  background-color: #F0EAD6;
+  background-color: #FFF5EE;
 }
 
 .third {
@@ -239,29 +244,8 @@ li {
 }
 
 .fourth {
-  background-color: #F0EAD6;
-}
-
-.weather-header {
-  text-align: right;
-  margin: 0;
-}
-.weather-photo {
-  background-image: url('partly-cloudy-day-icon.png');
-  background-size: cover;
-  display: inline-block;
-  height: 350px;
-  width: 350px;
-  margin-left: 80px;
-  margin-top: 20px;
-}
-
-.weather-copy {
-  padding: 10px;
-  height: 45px;
-  width: 600px;
-  text-align: right;
-  padding-bottom: 50px;
+/*  background-color: #F0EAD6;*/
+  background-color: #FFF5EE;
 }
 
 p {
@@ -269,55 +253,96 @@ p {
   font-family: 'Archivo Narrow', sans-serif;
 }
 
-.eat-photo {
-  background-image: url('mom4.jpg');
+.weather-header {
+  text-align: right;
+  margin: 0;
+  font-size: 3.5em;
+  padding-bottom: 45px;
+}
+
+p.weather-copy {
+  padding: 10px;
+  height: 45px;
+  width: 600px;
+  text-align: right;
+  padding-bottom: 50px;
+  line-height: 45px;
+}
+
+.weather-photo {
+  background-image: url('umbrella.gif');
+  background-size: cover;
   display: inline-block;
-  height: 350px;
-  width: 350px;
-  border-radius: 100%;
+  height: 475px;
+  width: 430px;
+  margin-left: 80px;
+  margin-top: 75px;
+}
+
+.eat-photo {
+  background-image: url('silverware.png');
+  display: inline-block;
+/*  height: 350px;
+  width: 350px;*/
+  height: 445px;
+  width: 430px;
+/*  border-radius: 100%;*/
   float: right;
   margin-top: 35px;
   margin-right: 100px;
 }
-.eat-copy {
-  height: 45px;
-  width: 600px;
-  margin-bottom: 22px;
-  margin-top: 15px;
-  padding: 15px;
-}
-.eat-tagline {
-  text-align: right;
-  padding-top: 45px;
-}
+
 .eat-header {
   margin: 0;
+  font-size: 3.5em;
+  padding-bottom: 45px;
 }
 
+.eat-copy {
+  padding: 10px;
+  height: 45px;
+  width: 600px;
+  text-align: left;
+  padding-bottom: 50px;
+  line-height: 45px;
+}
+
+.eat-tagline {
+  padding-top: 88px;
+  font-family: "Pacifico", sans-serif;
+  font-size: 2em;
+}
 
 .late-header {
   text-align: right;
+  margin: 0;
+  font-size: 3.5em;
+  padding-bottom: 45px;
 }
 
 .late-photo {
-  background-image: url('50smomcleantable.jpg');
-  height: 350px; 
-  width: 350px;
-  border-radius: 100%;
+  background-image: url('train.gif');
+  height: 360px;
+  width: 436px;
   display: inline-block; 
   margin-left: 30px;
   margin-top: 30px;
 }
 
 .late-copy {
+  padding: 10px;
   height: 45px;
   width: 600px;
-  margin-bottom: 55px;
-  margin-top: 15px;
-  padding: 15px;
+  text-align: right;
+  padding-bottom: 50px;
+  line-height: 45px;
 }
 
 .late-tagline {
+  padding-top: 54px;
+  text-align: right;
+  font-family: "Pacifico", sans-serif;
+  font-size: 2em;
   
 }
 
@@ -328,7 +353,6 @@ p {
 #phone-num {
   margin-left: auto;
   margin-right: auto;
-  margin-top: 55px;
 }
 #phone-num[placeholder]{
 font-weight:bold;
@@ -337,18 +361,23 @@ font-weight:bold;
 
 }
 .test-text-copy {
+  margin-top: 30px;
   height: 45px;
   width: 600px;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 30px;
-  font-family: "Montserrat Alternates", sans-serif;
-  font-size: 1.5em;
+
 }
 
 .test-text-tagline {
-  margin-top: 250px;
+  margin-top: 175px;
   font-size: 1.75em;
+}
+
+.weather-tagline {
+  margin-top: 116px;
+  font-family: "Pacifico", sans-serif;
+  font-size: 2em;
 }
 
 .text-first {
@@ -390,6 +419,7 @@ input {
   padding: 10px;
   font-size: 12px;
 }
+
 
 /* For smart phone */
 
@@ -445,6 +475,7 @@ input {
     border: none;
     padding-top: 8px;
     padding-left: 5px;
+    text-align: left;
 }
 
 #register-btn:hover { 
@@ -515,7 +546,9 @@ input.sign_in_button:hover {
   color: #27E6C3;
 }
 
+
 #send-text {
+
   background: black;
   color: white;
   border-radius: 4px;
@@ -525,12 +558,33 @@ input.sign_in_button:hover {
   font-size: 0.65em;
   padding-left: 15px;
   font-size: 0.65em;
-  padding-right: 20px;
+  padding-right: 15px;
+}
+
+/* For smart phone */
+
+@media(max-width: 480px),  {
+  h1 {
+    font-size: 42px;
+    padding: 15px;
+    text-align: center;
+  },
+  
+  h3 {
+    font-size: 10px;
+  },
+
+  .circle-photo-one {
+    width: 50%;
+    margin: 0 auto;
+    height: 240px;
+  }
 }
 
 #send-text:hover {
   color: #27E6C3;
 }
+
 
 .subway_line {
   float:right;
@@ -539,4 +593,17 @@ input.sign_in_button:hover {
 }
 #mta {
   margin-top: 15px;
+}
+
+.end-photo {
+    background-image: url('mom4.jpg'); 
+    height: 220px;
+    width: 220px;
+    border-radius: 100%;
+    margin-left: 525px;
+    margin-top: 25px;
+/*    display: inline-block;
+    float: right;
+    margin-right: 289px;
+    margin-top: -55px;*/
 }

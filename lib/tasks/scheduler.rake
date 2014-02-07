@@ -27,7 +27,7 @@ task :yelp => :environment do
 end
 
 desc "This task is for sending mta info"
-task :yelp => :environment do 
+task :mta => :environment do 
   connect
   puts "Sending MTA info"
   send_mta_text
