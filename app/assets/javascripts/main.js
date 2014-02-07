@@ -65,7 +65,7 @@ $(function() {
 		var number = $('#phone-num').val();
 
 		$.ajax({
-			url: '/welcome',
+			url: '/custom_text',
 			type: 'post',
 			dataType: 'json',
 			data: {phone_num: number}
