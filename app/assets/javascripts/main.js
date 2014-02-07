@@ -1,6 +1,6 @@
 $(function() {
 	
-
+	// $('.bxslider').bxSlider();
 
 	//***********
 	//Animate.css
@@ -47,7 +47,7 @@ $(function() {
 
 	})();
 
-	$(window).on('scroll', parallax);
+	// $(window).on('scroll', parallax);
 
 	//*************
 	//SLIDE-DOWN LOGIN & SIGNUP
@@ -84,7 +84,11 @@ $(function() {
   	$(".sign-in").slideToggle(1500);
 	});
 
+
+
 });
+
+
 
 // $(function() {
 // 	// activate sign up modal from

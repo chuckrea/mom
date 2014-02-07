@@ -1,5 +1,6 @@
 var mom_app, username;
 $(function() {
+<<<<<<< HEAD
   // $sign_up_form = $("form#sign_up_user");
   // $sign_up_form.on("submit", function(event){
     
@@ -30,6 +31,9 @@ $(function() {
   //  }); 
 
 $sign_up_form = $("form#sign_up_user");
+=======
+  $sign_up_form = $("form#sign_up_user");
+>>>>>>> 56d30db9cd3fcdb4f8545858a896881a8f724e5f
   $sign_up_form.on("submit", function(event){
     $.ajax({  url: '/users',
               method: "post",
@@ -39,7 +43,8 @@ $sign_up_form = $("form#sign_up_user");
     ).done(function(data) {
       console.log(data);
       if (data.success){
-        mom_app.signUp(data)
+        mom_app.signUp(data);
+        mom_app.confirmText(data);
       }
     });
   });
@@ -55,6 +60,7 @@ $sign_up_form = $("form#sign_up_user");
       console.log(data);
       if (data.success){
         mom_app.signIn(data);
+
       }
     });
   });
@@ -80,6 +86,18 @@ $sign_up_form = $("form#sign_up_user");
       $(".sign-in").slideToggle(1500);
       mom_app.loggedIn(data);
       //location.reload();    
+    },
+
+    confirmText: function(data){
+      $.ajax({
+        url: '/welcome',
+        type: 'post',
+        dataType: 'json',
+        data: {phone_num: data.current_user.phone_number}
+      })
+        .success(function(data) {
+        console.log("text was sent!")
+        });
     },
 
     signUp: function(data){
