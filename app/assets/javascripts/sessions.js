@@ -1,39 +1,6 @@
 var mom_app, username;
 $(function() {
-<<<<<<< HEAD
-  // $sign_up_form = $("form#sign_up_user");
-  // $sign_up_form.on("submit", function(event){
-    
-  //   // function validateEmail(email) {
-  //   //     var exp = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-  //   //     if (exp.test(email) == email){
-  //   //       return email 
-  //   //     };
-
-  //   // function validate() {
-  //   //   var email = $("#user_email").val();
-  //   //   if (validateEmail(email) == email){
-  //         $.ajax({  
-  //           url: '/users',
-  //           method: "post",
-  //           format: "json",
-  //           data: $sign_up_form.serialize()
-  //           }.done(function(data) {
-  //             console.log(data);
-  //             if (data.success){
-  //               mom_app.signUp(data)
-  //             }
-  //           })
-  //   //     } else {
-  //   //             window.alert("There's no fooling your mother! Enter a valid email address, honey.");
-  //   //             }
-  //   //  };
-  //  }); 
-
-$sign_up_form = $("form#sign_up_user");
-=======
   $sign_up_form = $("form#sign_up_user");
->>>>>>> 56d30db9cd3fcdb4f8545858a896881a8f724e5f
   $sign_up_form.on("submit", function(event){
     $.ajax({  url: '/users',
               method: "post",

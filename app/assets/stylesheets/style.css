@@ -125,17 +125,19 @@ h2 {
 }
 
 h3.tagline {
-  font-family: 'Belleza', sans-serif;
+  /*font-family: 'Belleza', sans-serif;*/
   font-size: 1.5em;
-  padding-left: 165px;
-  -webkit-margin-before: 0em; 
+  padding-left: 185px;
+  -webkit-margin-before: 0em;
   letter-spacing: 3px;
-  word-spacing: 4.5px;
+  word-spacing: 1.5px;
   padding-top: 40px;
+  text-align: center;
+  display: inline-block;
 }
 
 h3 {
-  font-family: 'Belleza', sans-serif;
+  font-family: 'Merienda One', sans-serif;
   font-size: 1.5em;
   text-align: center;
 }
@@ -220,8 +222,9 @@ li {
 }
 
 .banner {
-  top: 0px;
+  top: -11px;
   height: 650px;
+  background-color: #FFFAFA;
 }
 .footer {
   height: 650px;
