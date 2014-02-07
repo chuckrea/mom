@@ -360,6 +360,7 @@ p.weather-copy {
 }
 .test-text-copy {
   margin-top: 30px;
+  margin-bottom: 25px;
   height: 45px;
   width: 600px;
   margin-left: auto;
