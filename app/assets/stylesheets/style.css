@@ -341,11 +341,14 @@ font-weight:bold;
   width: 600px;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 40px
+  margin-top: 30px;
+  font-family: "Montserrat Alternates", sans-serif;
+  font-size: 1.5em;
 }
 
 .test-text-tagline {
-  margin-top: 100px;
+  margin-top: 250px;
+  font-size: 1.75em;
 }
 
 .text-first {
