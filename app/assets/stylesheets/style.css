@@ -355,10 +355,8 @@ p.weather-copy {
   margin-right: auto;
 }
 #phone-num[placeholder]{
-font-weight:bold;
-    color: dimgrey;
-    text-align:;
-
+  font-weight:bold;
+  color: dimgrey;
 }
 .test-text-copy {
   margin-top: 30px;
