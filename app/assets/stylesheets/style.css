@@ -55,8 +55,8 @@ body {
 
 
 .inactive {
-  /*visibility: hidden;*/
-  /*display: none;*/
+  visibility: hidden;
+  display: none;
 }
 
 .sign-up-form {
@@ -133,7 +133,9 @@ h3.tagline {
 h3 {
   font-family: 'Belleza', sans-serif;
   font-size: 1.5em;
+  text-align: center;
 }
+
 
 .circle-photo-one {
   background-image: url('mom6.jpg');
@@ -178,7 +180,7 @@ ul, menu, dir {
 ul li {
   list-style: none;
   overflow: hidden;
-  height: 500px;
+  height: 440px;
   position:relative;
 }
 
@@ -215,6 +217,10 @@ li {
 
 .banner {
   top: 0px;
+  height: 650px;
+}
+.footer {
+  height: 650px;
 }
 .first {
   background-color: #FFFAFA;
@@ -243,7 +249,7 @@ li {
   height: 350px;
   width: 350px;
   margin-left: 80px;
-  margin-top: 115px;
+  margin-top: 20px;
 }
 
 .weather-copy {
@@ -261,7 +267,7 @@ li {
   width: 350px;
   border-radius: 100%;
   float: right;
-  margin-top: 100px;
+  margin-top: 35px;
   margin-right: 100px;
 }
 .eat-copy {
@@ -291,7 +297,7 @@ li {
   border-radius: 100%;
   display: inline-block; 
   margin-left: 30px;
-  margin-top: 100px;
+  margin-top: 30px;
 }
 
 .late-copy {
@@ -307,7 +313,7 @@ li {
 }
 
 .test-text-header {
-  margin-top: 200px;
+  margin-top: 130px;
 }
 
 #phone-num {
@@ -330,7 +336,7 @@ font-weight:bold;
 }
 
 .test-text-tagline {
-  margin-top: 60px;
+  margin-top: 100px;
 }
 
 .text-first {
@@ -339,16 +345,21 @@ font-weight:bold;
 
 .text-second {
   display: inline-block;
+  float: right;
+  margin-right: 100px;
+  margin-top: 110px;
 }
 .text-third {
   display: inline-block;
   margin-left: 95px;
-  margin-top: 150px;
+  margin-top: 105px;
 }
 
 .text-fourth {
   display: inline-block;
-  padding-left: 75px;
+  float: right;
+  margin-right: 100px;
+  margin-top: 135px;
 }
 
 .text-fifth {

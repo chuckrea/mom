@@ -2,7 +2,7 @@
 
 $(function() {
 	
-
+	// $('.bxslider').bxSlider();
 
 	//***********
 	//Animate.css
@@ -86,7 +86,11 @@ $(function() {
   	$(".sign-in").slideToggle(1500);
 	});
 
+
+
 });
+
+
 
 // $(function() {
 // 	// activate sign up modal from

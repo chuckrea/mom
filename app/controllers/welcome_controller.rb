@@ -1,11 +1,15 @@
 require "api.rb"
+
+
 class WelcomeController < ApplicationController
+
 include Api
 
   def index
   end
 
   def create
+
     connect
     # account_sid = ENV["TWILIO_ACCOUNT_SID"]
     # auth_token = ENV["TWILIO_AUTH_TOKEN"]
@@ -25,6 +29,7 @@ include Api
           :to => params[:phone_num],
           :body => "It's Mom. Just so you know, I never liked that Siri and I don't think she's good enough for you."
         )
+
       end
     end
     redirect_to root_path

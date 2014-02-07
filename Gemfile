@@ -31,6 +31,7 @@ gem 'jquery-rails'
 
 gem 'twilio-ruby'
 gem 'pry'
+gem 'bxslider-rails'
 
 gem 'geocoder'
 gem 'yelpster'
