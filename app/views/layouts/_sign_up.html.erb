@@ -14,10 +14,10 @@
   <%= f.text_field :username, placeholder: "I still call you my Tickle Bear!" %></div>
 
   <div class="sign-up-form"><%= f.label :first_name %><br />
-  <%= f.text_field :first_name, placeholder: "First names only, hon" %></div>
+  <%= f.text_field :first_name, placeholder: "First names only, hon!" %></div>
 
   <div class="sign-up-form"><%= f.label :email %><br />
-  <%= f.email_field :email, :autofocus => true, placeholder: "Email address" %></div>
+  <%= f.email_field :email, placeholder: "Email address" %></div>
 
   <div class="sign-up-form"><%= f.label :password %><br />
   <%= f.password_field :password, placeholder: "Password" %></div>
@@ -35,18 +35,17 @@
   <%= f.text_field :zip_code, placeholder: "Zip Code" %></div>
 
   <div class="sign-up-form checkbox"><%= f.label :want_weather_updates_sweetie? %><br />
-  <div class="checkmark"><%= f.check_box :weather %></div></div>
+  <div><%= f.check_box :weather %></div></div>
 
   <div class="sign-up-form checkbox"><%= f.label :let_me_tell_you_where_to_eat? %><br />
-  <div class="checkmark"><%= f.check_box :yelp %></div></div>
+  <div><%= f.check_box :yelp %></div></div>
 
   <div class="sign-up-form checkbox"><%= f.label :give_you_train_updates? %><br />
-  <div class="checkmark"><%= f.check_box :mta %></div></div>
+  <div><%= f.check_box :mta %></div></div>
 
   <div class="sign-up-form checkbox"><%= f.label :want_Mom_to_be_annoying? %><br />
-  <div class="checkmark"><%= f.check_box :is_annoying %></div></div>
+  <div><%= f.check_box :is_annoying %></div></div>
 
-
-  <div class="sign-up-button"><%= f.submit "Sign up" %></div>
+  <div class="sign-up-submit"><%= f.submit "Sign up", class: "sign-up-button" %></div>
 <% end %>
 </div>
