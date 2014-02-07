@@ -12,7 +12,17 @@ end
 
 desc "This task is for sending an annoying text"
 task :annoying => :environment do 
+  connect
 	puts "Sending an annoying text"
 	send_annoying_text
 	puts "done."
 end
+
+desc "This task is for sending an annoying text"
+task :yelp => :environment do 
+  connect
+  puts "Sending Yelp info"
+  send_restaurants
+  puts "done."
+end
+

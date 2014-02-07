@@ -87,21 +87,24 @@ require 'nokogiri'
     end
   end
 
-  def send_restaurants(user)
-    account_sid = "AC2e3cd4670d5a455fb0e6da2e5ddd5eeb"
-    auth_token = "b40b07ba1a2d3d92bb5e9e2c77330c3b"
-    client = Twilio::REST::Client.new account_sid, auth_token
-    restaurants = user.yelp_infos.sample(3).map {|restaurant| "#{restaurant.restaurant_name}\n#{restaurant.address}\n#{restaurant.cuisine_type}\n"}
-    client.account.messages.create(
-        :from => "+16463623890",
-        :to => user.phone_number,
-        :body => "Mom here! With your metabolism you shouldn't eat too much, but here are some nearby restaurants if you're hungry:"
-      )
-    client.account.messages.create(
-        :from => @mom_number,
-        :to => user.phone_number,
-        :body => "#{restaurants[0]}\n#{restaurants[1]}\n#{restaurants[2]}"
-      )  
+  def send_restaurants
+    users = User.where(yelp: true)
+    users.each do |user|
+      if user.yelp_infos == []
+        get_restaurants(user)
+      end
+      restaurants = user.yelp_infos.sample(3).map {|restaurant| "#{restaurant.restaurant_name}\n#{restaurant.address}\n#{restaurant.cuisine_type}\n"}
+      @client.account.messages.create(
+          :from => "+16463623890",
+          :to => user.phone_number,
+          :body => "Mom here! With your metabolism you shouldn't eat too much, but here are some nearby restaurants if you're hungry:"
+        )
+      @client.account.messages.create(
+          :from => @mom_number,
+          :to => user.phone_number,
+          :body => "#{restaurants[0]}\n#{restaurants[1]}\n#{restaurants[2]}"
+        )
+    end
   end
 
   def get_forecast(user)
@@ -128,7 +131,7 @@ require 'nokogiri'
   end
 
   def send_weather_texts
-    users = User.all
+    users = User.where(weather: true)
     users.each do |user|
       forecast = get_forecast(user)
       @client.account.messages.create(
@@ -139,17 +142,9 @@ require 'nokogiri'
     end
   end
 
-  def send_confirmation_text(phone_number)
-      client = Twilio::REST::Client.new @account_sid, @auth_token
-      client.account.messages.create(
-          :from => @mom_number,
-          :to => phone_number,
-          :body => "It's Mom! Just so you know, I never liked that Siri and I don't think she's good enough for you."
-        )
-  end
 
   def send_mta_text
-    users = User.all
+    users = User.where(mta: true)
     users.each do |user|
       line_status = mta_data(user)
       @client.account.messages.create(

@@ -330,8 +330,8 @@ li {
 }
 #phone-num[placeholder]{
 font-weight:bold;
-    color:red;
-    text-align:center;
+    color: dimgrey;
+    text-align:;
 
 }
 .test-text-copy {
@@ -388,23 +388,21 @@ input {
 
 /* For smart phone */
 
-@media(max-width: 480px),  {
+@media(max-width: 480px) {
   h1 {
     font-size: 30px;
     padding: 5px;
     text-align: center;
-  },
+  }
   
   h3 {
     font-size: 10px;
-  },
+  }
 
   .circle-photo-one {
     width: 50%;
     margin: 0 auto;
     height: 240px;
-
-
   }
 }
 
@@ -511,4 +509,28 @@ input.sign_in_button:hover {
   color: #27E6C3;
 }
 
+#send-text {
+  background: black;
+  color: white;
+  border-radius: 4px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  border: none;
+  padding: 10px;
+  font-size: 0.65em;
+  padding-left: 15px;
+  font-size: 0.65em;
+  padding-right: 20px;
+}
 
+#send-text:hover {
+  color: #27E6C3;
+}
+
+.subway_line {
+  float:right;
+  margin-right: 35px;
+  margin-top: 6px;
+}
+#mta {
+  margin-top: 15px;
+}
