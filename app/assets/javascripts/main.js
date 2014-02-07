@@ -49,7 +49,7 @@ $(function() {
 
 	})();
 
-	// $(window).on('scroll', parallax);
+	$(window).on('scroll', parallax);
 
 	//*************
 	//SLIDE-DOWN LOGIN & SIGNUP
