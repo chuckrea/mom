@@ -5,32 +5,31 @@
 
 body {
   font-size: 18px;
-  /*background-color: #FFFAFA;*/
+  margin: 0 auto;
 }
 
 
 .inactive {
-  /*visibility: hidden;*/
-  /*display: none;*/
+  visibility: hidden;
+  display: none;
 }
 
 .sign-up-form {
-  
   margin: 5px;
   float: left;
 }
 
+.sign-up-submit {
+  clear:both;
+}
+
 .checkbox {
-  width: 150px;
+  width: 156px;
 }
 
-.checkmark {
+/*.checkmark {
   margin-top: -15px;
-}
-
-.sign-up-button {
-  clear: both;
-}
+}*/
 
 .session {
   color: white;
@@ -318,10 +317,14 @@ font-weight:bold;
   display: inline-block;
 }
 
+input {
+  padding: 10px;
+  font-size: 12px;
+}
 
 /* For smart phone */
 
-/*@media(max-width: 480px),  {
+@media(max-width: 480px),  {
   h1 {
     font-size: 30px;
     padding: 5px;
@@ -340,15 +343,108 @@ font-weight:bold;
 
   }
 }
-*/
-media="all"
-.button, button, input[type="submit"], input[type="reset"], input[type="button"] {
 
+
+
+#register-btn {
+    font-family: Helvetica;
+    font-size: .75em;
+    color: white;
+/*    text-decoration: underline;*/
+    background: none;
+    border: none;
+    padding-top: 8px;
+    padding-left: 5px;
 }
 
-.button {
-  background-color: blue;
+#sign-in-btn {
+    font-family: Helvetica;
+    font-size: .75em;
+    color: white;
+/*    text-decoration: underline;*/
+    background: none;
+    border: none;
+    padding-top: 8px;
+    padding-left: 5px;
 }
 
+#logout_link {
+    font-family: Helvetica;
+    font-size: .80em;
+    color: white;
+/*    text-decoration: underline;*/
+    background: none;
+    border: none;
+    padding-top: 8px;
+    padding-left: 5px;
+}
+
+#register-btn:hover { 
+    color: #27E6C3;
+}
+
+#sign-in-btn:hover { 
+    color: #27E6C3;
+}
+
+
+#logout_link:hover { 
+    color: #27E6C3;
+}
+
+h2.session {
+  color: #27E6C3;
+  margin: 0 auto;
+}
+
+form.new_user {
+  padding-top: 25px;
+  padding-left: 15px;
+}
+
+label {
+  font-family: Helvetica;
+  letter-spacing: 1px;
+  padding-top: 20px;
+/*  margin: 10px 0px 10px 0px;*/
+}
+
+input#user_remember_me {
+  margin: 15px 0px 15px 0px;
+}
+
+input.sign_in_button {
+  background: black;
+  color: white;
+  border-radius: 4px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  border: none;
+  padding: 10px;
+  font-size: 0.65em;
+  padding-left: 15px;
+  font-size: 0.65em;
+  padding-right: 15px;
+}
+
+.sign-up-button {
+  background: black;
+  color: white;
+  border-radius: 4px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  border: none;
+  padding: 10px;
+  font-size: 0.65em;
+  padding-left: 15px;
+  font-size: 0.65em;
+  padding-right: 15px;
+}
+
+input.sign_in_button:hover {
+  color: #27E6C3;
+}
+
+.sign-up-button:hover {
+  color: #27E6C3;
+}
 
 
