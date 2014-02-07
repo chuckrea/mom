@@ -9,3 +9,10 @@ task :weather => :environment do
   puts "done."
 end
 
+
+desc "This task is for sending an annoying text"
+task :annoying => :environment do 
+	puts "Sending an annoying text"
+	send_annoying_text
+	puts "done."
+end
