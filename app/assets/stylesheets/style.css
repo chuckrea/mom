@@ -384,23 +384,21 @@ input {
 
 /* For smart phone */
 
-@media(max-width: 480px),  {
+@media(max-width: 480px)  {
   h1 {
     font-size: 30px;
     padding: 5px;
     text-align: center;
-  },
+  }
   
   h3 {
     font-size: 10px;
-  },
+  }
 
   .circle-photo-one {
     width: 50%;
     margin: 0 auto;
     height: 240px;
-
-
   }
 }
 
