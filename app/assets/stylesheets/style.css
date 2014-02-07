@@ -561,16 +561,16 @@ input.sign_in_button:hover {
 
 /* For smart phone */
 
-@media(max-width: 480px),  {
+@media(max-width: 480px)  {
   h1 {
     font-size: 42px;
     padding: 15px;
     text-align: center;
-  },
+  }
   
   h3 {
     font-size: 10px;
-  },
+  }
 
   .circle-photo-one {
     width: 50%;
