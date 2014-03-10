@@ -6,12 +6,15 @@
 A slightly passive aggressive text based reminder service providing users with location specific forecasts, restaurant recommendations and transportation updates.
 
 
-##API's and Gems
+##APIs & Gems
 <hr>
-### Yelp
-### Forecast
-### MTA Info
-###Twilio
+### APIs:
+- Yelp
+- Forecast
+- MTA Info
+- Twilio
+
+### Gems:
 
 - Devise
 - Twilio-Ruby
@@ -25,7 +28,7 @@ A slightly passive aggressive text based reminder service providing users with l
 <br>
 <br>
 
-<img src="/Users/DanielBushkanets/Desktop/Screen Shot 2014-02-07 at 9.51.33 AM.png" style="width: 300px">
+<img src="/app/assets/images/mom_home_page.png" style="width: 700px">
 <br>
 <br>
 
