@@ -1,16 +1,4 @@
 $(function() {
-	
-	// $('.bxslider').bxSlider();
-
-	//***********
-	//Animate.css
-	//***********
-
-   // $('h1').addClass('animated bounceInLeft');
-
-	//**************
-	// PARALLAX
-	//**************
 	var parallax = (function() {
 		'use strict';
 
@@ -26,40 +14,31 @@ $(function() {
 			offset,
 			scroll;
 
-			console.log($divs);
+			console.log('parallax container');
 
 		return function render() {
 			
 			top = bodyScroll.scrollTop;
-			// console.log($divs);
+			console.log('body scroll');
 
 			for (i = 0; i < len; i++) {
-
 				$div = $divs.eq(i);
-
 				offset = $div.offset().top;
-
 				scroll = Math.round(((top - offset) / liHeight) * diffHeight);
-
 				$div.css('webkitTransform', "translate3d(0px, " + scroll + "px, " + scroll*(-20000) +"px)");
 			}
 		};
-
 	})();
 
 	$(window).on('scroll', parallax);
+	console.log('window onload')
 
-	//*************
 	//SLIDE-DOWN LOGIN & SIGNUP
-	//*************
 	$('.pull-me').click(function(){
     $('.panel').slideToggle('slow');
     });
 
-	//*************
 	//CUSTOM TEXT EVENT HANDLING
-	//*************
-
 	$('#send-text').click(function(){
 		console.log("button was clicked");
 		var number = $('#phone-num').val();
@@ -83,27 +62,4 @@ $(function() {
 	$("#sign-in-btn").click(function(){
   	$(".sign-in").slideToggle(1500);
 	});
-
-
-
 });
-
-
-
-// $(function() {
-// 	// activate sign up modal from
-//   $sign_up_form = $("form#sign_up_user");
-// 	$sign_up_form.on("submit", function(event){
-// 	  $.ajax({	url: '/users',
-//    						method: "post",
-// 	  					format: "json",
-// 	  					data: $sign_up_form.serialize()
-// 	  				}
-// 	  ).done(function(data) {
-// 	  	console.log(data);
-// 	  	if (data.success){
-// 	  		game_app.signUp(data)
-// 	  	}
-// 	  });
-// 	});
-

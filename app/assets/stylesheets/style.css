@@ -23,8 +23,8 @@ time, mark, audio, video {
   border: 0;
   font-size: 100%;
   font: inherit;
-  vertical-align: baseline;
-}
+  vertical-align: baseline; }
+
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
@@ -160,17 +160,6 @@ p {
   margin-right: 71px;
 }
 
-/*.circle-photo-two {
-  background-image: url('../images/mom7.jpg'); 
-    height: 220px;
-    width: 220px;
-    border-radius: 100%;
-    display: inline-block;
-    float: right;
-  margin-right: 289px;
-  margin-top: -55px;
-}*/
-
 .thin-first {
   height: 100px;
   background-color: cyan;
@@ -203,33 +192,30 @@ li {
 
 .parallax {
   position: relative;
-  top: 15px;
-}
+  top: 15px; }
 
 .parallax-background {
-  height: 1000px;
-  background-size: cover;
-}
+  height: 700px;
+  background-size: cover; }
 
 .photo1 {
   background-image:url('mom10.jpg');
   background: cover;
-  height: 100px;
- 
-}
+  height: 100px; }
 
-.liclass {
-   height: 200px;
-}
+.liclass { height: 200px; }
 
 .banner {
   top: -11px;
   height: 650px;
   background-color: #FFFAFA;
 }
+
 .footer {
+  padding-top: 50px;
   height: 650px;
 }
+
 .first {
   background-color: #FFFAFA;
 }
@@ -239,11 +225,12 @@ li {
 }
 
 .third {
+  padding-top: 85px;
   background-color: #FFFAFA;
 }
 
 .fourth {
-/*  background-color: #F0EAD6;*/
+    padding-top: 85px;
   background-color: #FFF5EE;
 }
 
@@ -428,6 +415,7 @@ input {
     margin: 0 auto;
     height: 240px;
   }
+  
 }
 
 
