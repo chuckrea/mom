@@ -33,6 +33,9 @@
 
   <div class="sign-up-form"><%= f.label :zip_code %><br />
   <%= f.text_field :zip_code, placeholder: "Zip Code" %></div>
+  
+  <div class="subway_line"><%= f.label :subway_line %><br />
+  <%= select_tag(:mta, options_for_select([['123', '123'], ['456', '456'], ['7', '7'], ['ACE','ACE'], ['BDFM','BDFM'],['G','G'],['JZ','JZ'],['L','L'],['NQR','NQR'],['S','S'],['SIR','SIR']]) ) %></div>
 
   <div class="sign-up-form checkbox"><%= f.label :want_weather_updates_sweetie? %><br />
   <div><%= f.check_box :weather %></div></div>

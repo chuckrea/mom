@@ -50,7 +50,7 @@ $(function() {
   mom_app = {
     // actions
     signIn: function(data){
-      $(".sign-in").slideToggle(1500);
+      $(".sign-in").slideToggle(500);
       mom_app.loggedIn(data);
       //location.reload();    
     },
@@ -69,7 +69,7 @@ $(function() {
 
     signUp: function(data){
       
-      $(".register").slideToggle(1500);
+      $(".register").slideToggle(500);
   
       mom_app.loggedIn(data);
       //location.reload();
