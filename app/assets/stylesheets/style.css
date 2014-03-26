@@ -331,83 +331,25 @@ input {
 
 
 /* For tablet */
-@media(max-width: 1200px)  {
 
-  .first {
-   
-    text-align: center;
-    display: block;
-    float: none;
-    margin: 0 auto;
-  }
- 
- .circle-photo-one {
-   margin: 50px 250px 50px 250px;
-   display: inline-block;
-   /*margin: 0 auto; */
-   /*float: left;*/
-   /*display: block;*/
-  }
 
-.weather-header {
-  text-align: right;
-  margin: 0 auto;
-}
-.weather-photo {
-  background-image: url('partly-cloudy-day-icon.png');
-  background-size: cover;
-  display: inline-block;
-  height: 350px;
-  width: 350px;
-  margin-left: 80px;
-  margin-top: 20px;
-}
+@media(max-width: 1300px)  {
 
-.weather-copy {
-  padding: 10px;
-  height: 45px;
-  width: 600px;
-  text-align: right;
-  padding-bottom: 50px;
- }
-
- .text-second {
-  display: inline-block;
-  float: right;
-  margin-right: 50px;
-  margin-top: 50px;
-}
-}
-
-@media(max-width: 1000px)  {
-
-  .first {
-   
-    text-align: center;
-    display: block;
-    float: none;
-    /*margin: auto;*/
-  }
- 
- .circle-photo-one {
-   /*margin: 50px 250px 50px 250px;*/
-   
+   .first {
+    width: 1259px;
    }
-    .text-second{
-    display: inline-block;
-
-  }
-
-   .weather-copy {
-    float: right;
-  }
-
-
-}
-
-@media(max-width: 748px)  {
-
-
+   .second {
+    width: 1259px;
+   }
+   .third {
+    width: 1259px;
+   }
+   .fourth {
+    width: 1259px;
+   }
+   .fifth {
+    width: 1259px;
+   }
 }
 /* For smart phone */
 
