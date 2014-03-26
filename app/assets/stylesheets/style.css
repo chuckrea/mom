@@ -390,18 +390,98 @@ input {
   font-size: 12px;
 }
 
+/* For tablet */
+@media(max-width: 1200px)  {
+
+  .first {
+   
+    text-align: center;
+    display: block;
+    float: none;
+    margin: 0 auto;
+  }
+ 
+ .circle-photo-one {
+   margin: 50px 250px 50px 250px;
+   display: inline-block;
+   /*margin: 0 auto; */
+   /*float: left;*/
+   /*display: block;*/
+  }
+
+.weather-header {
+  text-align: right;
+  margin: 0 auto;
+}
+.weather-photo {
+  background-image: url('partly-cloudy-day-icon.png');
+  background-size: cover;
+  display: inline-block;
+  height: 350px;
+  width: 350px;
+  margin-left: 80px;
+  margin-top: 20px;
+}
+
+.weather-copy {
+  padding: 10px;
+  height: 45px;
+  width: 600px;
+  text-align: right;
+  padding-bottom: 50px;
+ }
+
+ .text-second {
+  display: inline-block;
+  float: right;
+  margin-right: 50px;
+  margin-top: 50px;
+}
+}
+
+@media(max-width: 1000px)  {
+
+  .first {
+   
+    text-align: center;
+    display: block;
+    float: none;
+    /*margin: auto;*/
+  }
+ 
+ .circle-photo-one {
+   /*margin: 50px 250px 50px 250px;*/
+   
+   }
+    .text-second{
+    display: inline-block;
+
+  }
+
+   .weather-copy {
+    float: right;
+  }
+
+
+}
+
+@media(max-width: 748px)  {
+
+
+}
 /* For smart phone */
 
-@media(max-width: 480px),  {
+@media(max-width: 480px)  {
   h1 {
     font-size: 30px;
     padding: 5px;
     text-align: center;
-  },
+  }
   
   h3 {
     font-size: 10px;
-  },
+
+  }
 
   .circle-photo-one {
     width: 50%;
